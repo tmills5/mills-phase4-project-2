@@ -1,7 +1,7 @@
 class ParksController < ApplicationController
     def index
         park = Park.all
-        render json: park
+        render json: park, includes: :reviews
     end
 
     def show

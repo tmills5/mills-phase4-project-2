@@ -1,4 +1,4 @@
 class Review < ApplicationRecord
-    belongs_to :user, optional: true
-    belongs_to :park, optional: true
+    belongs_to :user, optional: true, foreign_key: true
+    belongs_to :park
 end
