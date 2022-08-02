@@ -1,4 +1,54 @@
-.App {
+body {
+  margin: auto;
+  width: auto; 
+  padding: 10px;
+  color: #020202;    
+}
+
+#home-parent-div {
+    background-color: rgb(240, 227, 227);
+
+    padding: 10px;
+    align-items: center;
+}
+
+.home-child-div-1 {
+  background-image: url("https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 500px;
+  width: 50%;
+  margin: 20px;
+  text-align: center;
+  justify-content: center;
+  box-shadow: 10px 10px 100px 10px inset black;
+  /* box-shadow: -10px -10px 500px inset black; */
+}
+
+.parks-container {
+  background-color: rgb(83, 15, 242);
+  height: 600px;
+  margin: 20px;
+}
+
+.home-child-div-3 {
+  background-color: rgb(227, 12, 12);
+  height: 600px;
+  margin: 20px;
+}
+/* .child-div-img {
+  display: flex;
+  max-height: auto;
+  width: 50%;
+  border-radius: 50%;
+} */
+
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +85,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

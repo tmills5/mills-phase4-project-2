@@ -14,25 +14,25 @@ function App() {
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   // const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   const options = {
-  //     method: 'GET',
-  //     headers: {
-  //       'X-Api-Key': ' ',
-  //       'X-RapidAPI-Key': '9a9f03145bmsh082d0e7cede4082p1cd3a7jsn6c2d29c82494',
-  //       'X-RapidAPI-Host': 'jonahtaylor-national-park-service-v1.p.rapidapi.com'
-  //     }
-  //   };
+  useEffect(() => {
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-Api-Key': '',
+        'X-RapidAPI-Key': '9a9f03145bmsh082d0e7cede4082p1cd3a7jsn6c2d29c82494',
+        'X-RapidAPI-Host': 'jonahtaylor-national-park-service-v1.p.rapidapi.com'
+      }
+    };
     
-  //   fetch('https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?stateCode=ga', options)
-  //     .then(response => response.json())
-  //     .then(parksInitial => {
-  //       console.log(parksInitial)
-  //       setParks(parksInitial)
-  //     })
-  //     .catch(err => console.error(err));
+    fetch('https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?limit=10', options)
+      .then(response => response.json())
+      .then(parksInitial => {
+        console.log(parksInitial)
+        setParks(parksInitial)
+      })
+      .catch(err => console.error(err));
       
-  // },[]);
+  },[]);
 
   return (
     <div className="App">
