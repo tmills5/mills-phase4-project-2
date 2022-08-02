@@ -1,8 +1,8 @@
 body {
-  margin: auto;
+  height: 100vh;
   width: auto; 
   padding: 10px;
-  color: red;    
+  
 }
 
 .navbar {
@@ -10,38 +10,35 @@ body {
 }
 
 #home-parent-div {
-    background-color: rgb(243, 134, 134);
+    background-color: black;
     padding: 10px;
     align-items: center;
-    /* box-shadow: 10px 10px 100px 10px inset rgb(250, 5, 5); */
 }
 
-/* .home-child-div-1 {
-  background-image: url("https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 500px;
-  width: 50%;
-  text-align: center;
-  justify-content: center;
-  
-  box-shadow: -10px -10px 500px inset black;
-} */
 .hero-body {
+  height: 600px;
+  background-image: url("https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-text {
   text-align: center;
+  font-size: 100px;
+  color: white;
+  padding-top: 30px;
 }
 
-img {
-  max-height: 600px;
-  box-shadow: 10px 10px 500px inset rgb(248, 250, 248);
-  
+.subtitle {
+  text-align: center;
+  font-size: 30px;
+  color: white;
 }
 
-.parks-container {
+.home-middle {
   background-color: rgb(83, 15, 242);
   height: 600px;
-  margin: 20px;
 }
 
 .home-child-div-3 {

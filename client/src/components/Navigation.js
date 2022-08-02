@@ -26,7 +26,7 @@ function Navigation() {
   <div id="navbarBasicExample" className="navbar-menu">
     <div className="navbar-start">
       <a className="navbar-item">
-        <Link to='/'>Park.me</Link>
+        <Link to='/'>ParkIt</Link>
       </a>
 
       <a className="navbar-item">

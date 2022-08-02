@@ -18,30 +18,16 @@ function Home( {parks} ) {
     <div id="home-parent-div">
       <section className="hero">
         <div className="hero-body">
-          <container>
-            <img
-              className="child-div-image"
-              src="https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Mountain View from Ground"
-            />
-          </container>
-          {/* <p class="title">
-            Hero title
-          </p>
-          <p class="subtitle">
-            Hero subtitle
-          </p> */}
-        </div>
+          <h1 className="hero-text">The Great Outdoors...</h1>
+          <p className="subtitle">The Solution in Finding National Parks</p>
+         </div>
       </section>
-      {/* <div className="home-child-div-1">
+      <section className="home-middle">
+        <div>
 
-      </div> */}
+        </div>
 
-      <div className="parks-container">
-        <h1>Parks Container</h1>
-        {/* {showTestParks} */}
-
-      </div>
+      </section>
       
       <div className="home-child-div-3">
         <h1>THIRD</h1>
