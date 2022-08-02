@@ -30,7 +30,7 @@ function Navigation() {
       </a>
 
       <a className="navbar-item">
-        Documentation
+        Discover
       </a>
 
       <div className="navbar-item has-dropdown is-hoverable">

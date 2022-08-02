@@ -15,15 +15,27 @@ function Home( {parks} ) {
 
 
   return(
-
     <div id="home-parent-div">
-      <div className="home-child-div-1">
-        {/* <img
-        className="child-div-image"
-        src="https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600"
-        alt="Mountain View from Ground"
-        ></img> */}
-      </div>
+      <section className="hero">
+        <div className="hero-body">
+          <container>
+            <img
+              className="child-div-image"
+              src="https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt="Mountain View from Ground"
+            />
+          </container>
+          {/* <p class="title">
+            Hero title
+          </p>
+          <p class="subtitle">
+            Hero subtitle
+          </p> */}
+        </div>
+      </section>
+      {/* <div className="home-child-div-1">
+
+      </div> */}
 
       <div className="parks-container">
         <h1>Parks Container</h1>

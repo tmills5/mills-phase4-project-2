@@ -2,28 +2,40 @@ body {
   margin: auto;
   width: auto; 
   padding: 10px;
-  color: #020202;    
+  color: red;    
+}
+
+.navbar {
+  background-color: black;
 }
 
 #home-parent-div {
-    background-color: rgb(240, 227, 227);
-
+    background-color: rgb(243, 134, 134);
     padding: 10px;
     align-items: center;
+    /* box-shadow: 10px 10px 100px 10px inset rgb(250, 5, 5); */
 }
 
-.home-child-div-1 {
+/* .home-child-div-1 {
   background-image: url("https://images.pexels.com/photos/1324803/pexels-photo-1324803.jpeg?auto=compress&cs=tinysrgb&w=1600");
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   height: 500px;
   width: 50%;
-  margin: 20px;
   text-align: center;
   justify-content: center;
-  box-shadow: 10px 10px 100px 10px inset black;
-  /* box-shadow: -10px -10px 500px inset black; */
+  
+  box-shadow: -10px -10px 500px inset black;
+} */
+.hero-body {
+  text-align: center;
+}
+
+img {
+  max-height: 600px;
+  box-shadow: 10px 10px 500px inset rgb(248, 250, 248);
+  
 }
 
 .parks-container {
@@ -33,16 +45,11 @@ body {
 }
 
 .home-child-div-3 {
-  background-color: rgb(227, 12, 12);
+  background-color: rgb(229, 239, 32);
   height: 600px;
   margin: 20px;
 }
-/* .child-div-img {
-  display: flex;
-  max-height: auto;
-  width: 50%;
-  border-radius: 50%;
-} */
+
 
 
 
