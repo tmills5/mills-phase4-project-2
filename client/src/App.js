@@ -11,8 +11,8 @@ import Discover from './components/Discover';
 
 function App() {
   const [parks, setParks] = useState([])
-  // const [errors, setErrors] = useState(false)
-
+  
+//  const [errors, setErrors] = useState(false)
   // const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
 
@@ -43,7 +43,7 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={ <Home  />} />
-        <Route exact path='/discover' element={ <Discover parks={parks} setParks={setParks}/>} />
+        <Route exact path='/discover' element={ <Discover parks={parks} setParks={setParks} />} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} />} />

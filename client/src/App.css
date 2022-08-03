@@ -7,8 +7,14 @@
 body {
   height: 100vh;
   width: 100%;
-  padding: 10px;
   display:grid;
+  background-color: black;
+}
+.App {
+  height: 100vh;
+  width: 100%;
+  padding: 5px;
+  background-color: black;
 }
 
 /* Landing Page-------------------------------- */
@@ -51,12 +57,16 @@ body {
 
 
 /* Discover Page ---------------------------------- */
+.input {
+  max-width: 600px;
+}
 .park-list-container {
   background-color: black;
 }
 
 .box {
   padding: 10px;
+  margin: 10px;
 }
 
 /* Signup -------------------------------------------- */
