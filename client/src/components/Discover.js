@@ -9,7 +9,7 @@ function Discover( {parks, setParks} ) {
     const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
         park.fullName.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
 
-
+// console.log(parks)
     return(
         <div className="park-list-container">
             <input 

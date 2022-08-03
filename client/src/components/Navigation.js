@@ -29,7 +29,7 @@ function Navigation( {setUser} ) {
           </div>
 
           <div className="navbar-item" href='/'>
-            <Link to='/discover'>Discover</Link>
+            <Link to='/parks'>Discover</Link>
           </div>
 
 

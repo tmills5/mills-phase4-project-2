@@ -8,6 +8,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Logout from './components/Logout';
 import Discover from './components/Discover';
+import ParkDetail from './components/ParkDetail';
 
 function App() {
   const [parks, setParks] = useState([])
@@ -29,7 +30,7 @@ function App() {
     fetch('https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?limit=10', options)
       .then(response => response.json())
       .then(parksInitial => {
-        // console.log(parksInitial.data)
+        console.log(parksInitial.data)
         // extracting just the array of parks-they're housed in object "data"
         setParks(parksInitial.data)
       })
@@ -43,10 +44,12 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={ <Home  />} />
-        <Route exact path='/discover' element={ <Discover parks={parks} setParks={setParks} />} />
+        <Route exact path='/parks' element={ <Discover parks={parks} setParks={setParks} />} />
+        <Route exact path='/parks/:id' element={ <ParkDetail />} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} />} />
+        
         
       </Routes>
     </div>

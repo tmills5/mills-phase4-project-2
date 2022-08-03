@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   resources :reviews
   resources :parks
   resources :users, only:[:create]
+
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
   get '/authorized_user', to: 'users#show'
-  get '/discover', to: 'parks#index'
-
+  get '/parks', to: 'parks#index'
+  get '/parks/:id', to: 'parks#show'
   
-
   #logging in and logging out
   post "/login", to: "sessions#login"
   delete '/logout', to: 'sessions#destroy'
