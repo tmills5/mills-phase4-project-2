@@ -1,37 +1,34 @@
 import React from "react";
-// import { Link } from "react-router-dom";
+import Card from './Card';
 
 
-function Home( {parks} ) {
-  console.log(parks.data)
-  const parksData = parks.data
-
-  // const showTestParks = parksData.map(park => (
-  //   // console.log(park)
-  //   <>
-  //     <h1>{park.fullName}</h1>
-  //   </>
-  // ))
+function Home() {
 
 
   return(
     <div id="home-parent-div">
       <section className="hero">
         <div className="hero-body">
-          <h1 className="hero-text">The Great Outdoors...</h1>
-          <p className="subtitle">The Solution in Finding National Parks</p>
+          {/* <h1 className="hero-text">ParkIt...</h1> */}
+          <img src="https://images.pexels.com/photos/2106380/pexels-photo-2106380.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+          <img src="https://images.pexels.com/photos/6272357/pexels-photo-6272357.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+          <img src="https://images.pexels.com/photos/5480815/pexels-photo-5480815.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+          <p className="subtitle">The solution for a wandering soul...</p>
+         </div>
+         <div className="hero-text">
+          hi
          </div>
       </section>
-      <section className="home-middle">
-        <div>
 
-        </div>
 
-      </section>
+      <section className="home-middle-container">
       
-      <div className="home-child-div-3">
-        <h1>THIRD</h1>
-      </div>
+     
+
+
+      <hr/>
+      
+      </section>
     </div>
     
   )

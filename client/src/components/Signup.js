@@ -1,7 +1,6 @@
 
 
 import React, { useState } from "react";
-import { Link } from 'react-router-dom';
 
 
 function Signup() {
@@ -22,9 +21,9 @@ function Signup() {
         body:JSON.stringify(user)
       })
       .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        if(json.errors) setErrors(Object.entries(json.errors))
+      .then(userEnteredJson => {
+        console.log(userEnteredJson)
+        if(userEnteredJson.errors) setErrors(Object.entries(userEnteredJson.errors))
       })
       console.log(errors)
       setUsername('');
@@ -32,24 +31,22 @@ function Signup() {
   }
 
   return (
-      <> 
-      <h1>Sign UP</h1>
-      <form onSubmit={onSubmit} >
-      <label>
-        Username
- 
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label>
-       Password
-  
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-     
-      <input type="submit" value="Sign up!" />
-    </form>
-    <Link to='/'>Home</Link>
-      </>
+    <div className="container is-fluid">
+      <div className="notification is-primary">
+        <h1>Sign Up!!</h1>
+        <form onSubmit={onSubmit} >
+          <label>
+          Username
+          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          </label>
+          <label>
+          Password
+          <input type="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </label>
+          <input type="submit" value="Sign up!" />
+        </form>
+      </div>
+    </div>
   )
 }
 

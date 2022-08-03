@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function Login() {
+function Login( {user, setUser} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
    
@@ -21,39 +21,35 @@ function Login() {
           body:JSON.stringify(user)
         })
         .then(res => res.json())
-        .then(json => {
-            console.log(json)
-            if(json.errors) setErrors(json.errors)
+        .then(user => {
+            console.log(user)
+            if(user.errors) setErrors(user.errors)
         })
         console.log(errors)
+        setUser(user);
         setUsername('');
         setPassword('');
     }
 
 
-    // const logout = () => {
-    //   fetch('/logout', {
-    //     method: 'DELETE'
-    //   })
-      
-    // }
-
     return (
-      <>
-      <h1>Login</h1>
-      <form onSubmit={onSubmit}>
-      <label>
-        Username
-        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
-      </label>
-      <label>
-       Password
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </label>
-      <input type="submit" value="Login!" />
-    </form>
-    {/* <button onClick={logout}>Logout</button> */}
-    </>
+      <div className="container is-fluid">
+        <div className="notification is-primary">
+          <h1>Login</h1>
+          <form onSubmit={onSubmit}>
+            <label>
+              Username
+              <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            </label>
+
+            <label>
+              Password
+            <input type="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
+            <input type="submit" value="Login!" />
+          </form>
+        </div>
+      </div>
     );
   }
 

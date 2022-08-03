@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
   get '/authorized_user', to: 'users#show'
+  get '/discover', to: 'parks#index'
 
   
 
