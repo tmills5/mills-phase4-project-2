@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
-function Login( {user, setUser} ) {
+function Login( {setUser, navigate} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
    
@@ -8,12 +9,13 @@ function Login( {user, setUser} ) {
 
     function onSubmit(e){
         e.preventDefault()
+        navigate('/')
         let user = {
             username,
             password
         }
        
-        console.log(user)
+        // console.log(user)
 
         fetch('/login',{
           method:'POST',
@@ -35,7 +37,6 @@ function Login( {user, setUser} ) {
     return (
       <div className="container is-fluid">
         <div className="notification is-primary">
-          <h1>Login</h1>
           <form onSubmit={onSubmit}>
             <label>
               Username
@@ -46,8 +47,9 @@ function Login( {user, setUser} ) {
               Password
             <input type="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
-            <input type="submit" value="Login!" />
+            <input type="submit" value="Login" />
           </form>
+          <Link to='/'>Home</Link>
         </div>
       </div>
     );

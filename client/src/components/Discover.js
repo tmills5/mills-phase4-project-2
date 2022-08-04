@@ -3,7 +3,7 @@ import Card from "./Card"
 
 
 
-function Discover( {parks, setParks} ) {
+function Discover( {parks} ) {
     const [parkNameQuery, setParkNameQuery] = useState("");
 
     const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>

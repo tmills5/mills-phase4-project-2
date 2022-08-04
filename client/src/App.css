@@ -1,15 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing:border-box;
-}
 
-body {
-  height: 100vh;
-  width: 100%;
-  display:grid;
-  background-color: black;
-}
 .App {
   height: 100vh;
   width: 100%;
@@ -19,44 +8,85 @@ body {
 
 /* Landing Page-------------------------------- */
 
+
+/* --------------Nav----------------------- */
 .navbar {
   background-color: black;
 }
 
+.nav-title {
+  font-size: 50px;
+  color: white;
+  font-family: monospace;
+}
+
+hr {
+  margin: 1%;
+}
+/* -----------------landing content---------------------- */
+
 #home-parent-div {
     background-color: black;
     padding: 10px;
-    align-items: center;
+    /* justify-content: center; */
 }
 
-.hero-body {
-  height: 600px;
-  width: 100%;
-
-}
-
-.hero-text {
-  display: inline;
-  text-align: center;
-  font-size: 100px;
-  color: white;
-  text-align: right;
-}
-
-.subtitle {
-  /* text-align: center; */
-  font-size: 30px;
-  color: white;
-  
-}
-
-.home-middle-child {
+.hero {
   background-color: black;
   height: 600px;
+  margin: auto;
 }
 
+img {
+  width: 30%;
+  height: 100%;
+  object-fit:cover;
+  
+  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
+  
+  transform-origin:center;
+  transform:perspective(800px) rotateY(25deg);
+  transition:0.5s;
+}
+.hero {
+  max-width:600px;
+  max-height:350px;
+  
+  
+  
+  display:flex;
+  flex-direction: row;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  
+}
+.hero:hover img {
+  opacity:0.3;
+}
+.hero img:hover {
+  transform:perspective(800px)       rotateY(0deg);
+  opacity:1;
+}
+
+.home-bottom-container {
+  background-color: black;
+  height: 200px;
+  text-align: center;
+}
+
+.home-bottom-title {
+  color: white;
+  font-size: 20px;
+  font-family: monospace;
+}
+
+h2 {
+  color: white;
+}
 
 /* Discover Page ---------------------------------- */
+
 .input {
   max-width: 600px;
 }
@@ -69,12 +99,17 @@ body {
   margin: 10px;
 }
 
-/* Signup -------------------------------------------- */
+/* Sign up --Log in------------------------- */
 
 input {
   margin: 10px;
 }
-/* Login --------------------------------------------- */
+
+h1 {
+  font-size: 20px;
+  color: blue;
+}
+
 
 /* Logout -------------------------------------------- */
 
@@ -87,43 +122,4 @@ input {
   font-size: 30px;
 }
 
-
-
-/* body {
-  width: 100%;
-  height: 100vh;
-  background-color:#000;
-  
-  display:grid;
-  place-items:center;
-} */
-img {
-  width: 30%;
-  height: 100%;
-  object-fit:cover;
-  
-  -webkit-box-reflect:below 2px linear-gradient(transparent, transparent, #0004);
-  
-  transform-origin:center;
-  transform:perspective(800px) rotateY(25deg);
-  transition:0.5s;
-}
-
-.hero-body {
-  max-width:600px;
-  max-height:350px;
-  
-  
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:20px;
-  
-}
-.hero-body:hover img {
-  opacity:0.3;
-}
-.hero-body img:hover {
-  transform:perspective(800px)       rotateY(0deg);
-  opacity:1;
-}
+/* ===========================================================================play */

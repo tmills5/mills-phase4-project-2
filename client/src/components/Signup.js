@@ -1,16 +1,15 @@
-
-
 import React, { useState } from "react";
 
 
-function Signup() {
+function Signup( {setUser, navigate} ) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [errors, setErrors] = useState([])
 
   function onSubmit(e){
-      e.preventDefault()
-      const user = {
+    e.preventDefault()
+    navigate('/');
+      let user = {
           name: username,
           password
       }
@@ -23,11 +22,14 @@ function Signup() {
       .then(res => res.json())
       .then(userEnteredJson => {
         console.log(userEnteredJson)
+        setUser(userEnteredJson)
         if(userEnteredJson.errors) setErrors(Object.entries(userEnteredJson.errors))
       })
       console.log(errors)
+      setUser(user);
       setUsername('');
       setPassword('');
+    
   }
 
   return (

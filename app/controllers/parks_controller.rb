@@ -1,4 +1,6 @@
 class ParksController < ApplicationController
+    wrap_parameters format: []
+    
     def index
         parks = Park.all
         render json: parks

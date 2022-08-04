@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Navigation( {setUser} ) {
+function Navigation( {user, setUser} ) {
+  console.log(user)
 
     const logout = () => {
         fetch('/logout', {
           method: 'DELETE'
         })
-        setUser();
+       setUser(); 
       }
 
   return (
@@ -36,9 +37,11 @@ function Navigation( {setUser} ) {
           <div className="navbar-item" onClick={logout}>
             <Link to='/logout'>Log Out</Link>
           </div>
-
+          
       </div>
-
+      <div className="nav-title">
+        ParkIt
+      </div>
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
