@@ -7,7 +7,7 @@ import Navigation from './components/Navigation';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import Logout from './components/Logout';
-import Discover from './components/Discover';
+import ParksPage from './components/ParksPage';
 import ParkDetail from './components/ParkDetail';
 
 function App() {
@@ -19,21 +19,12 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: {
-        'X-Api-Key': 'YQqHROTp15773aO6ZRsDCaFKX3WTEWbKqFf71V8e',
-        'X-RapidAPI-Key': '9a9f03145bmsh082d0e7cede4082p1cd3a7jsn6c2d29c82494',
-        'X-RapidAPI-Host': 'jonahtaylor-national-park-service-v1.p.rapidapi.com'
-      }
-    };
     
-    fetch('https://jonahtaylor-national-park-service-v1.p.rapidapi.com/parks?limit=10', options)
+    fetch('/parks')
       .then(response => response.json())
       .then(parksInitial => {
-        console.log(parksInitial.data)
-        // extracting just the array of parks-they're housed in object "data"
-        setParks(parksInitial.data)
+        console.log(parksInitial)
+        setParks(parksInitial)
       })
       .catch(err => console.error(err));
 
@@ -55,7 +46,7 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={ <Home  user={user} />} />
-        <Route exact path='/parks' element={ <Discover parks={parks} setParks={setParks} />} />
+        <Route exact path='/parks' element={ <ParksPage parks={parks} setParks={setParks} />} />
         <Route exact path='/parks/:id' element={ <ParkDetail />} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />

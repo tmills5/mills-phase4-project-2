@@ -16,10 +16,10 @@ end
 
 10.times do
   Park.create!(
-    full_name: Faker::Science.scientist,
+    full_name: Faker::Mountain.name,
     state: Faker::Address.state,
     description: Faker::Lorem.paragraph(sentence_count: 4),
-    image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['planets']),
+    image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['trails', 'parks', 'mountain'], match_all: true),
     url: Faker::Internet.url
   )
 end

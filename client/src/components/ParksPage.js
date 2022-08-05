@@ -3,13 +3,13 @@ import Card from "./Card"
 
 
 
-function Discover( {parks} ) {
+function ParksPage( {parks} ) {
     const [parkNameQuery, setParkNameQuery] = useState("");
 
     const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
-        park.fullName.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
+        park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
 
-// console.log(parks)
+// console.log(parks[0][fullName])
     return(
         <div className="park-list-container">
             <input 
@@ -28,4 +28,4 @@ function Discover( {parks} ) {
     );
 };
 
-export default Discover;
+export default ParksPage;

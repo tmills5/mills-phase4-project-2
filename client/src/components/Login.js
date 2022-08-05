@@ -9,7 +9,7 @@ function Login( {setUser, navigate} ) {
 
     function onSubmit(e){
         e.preventDefault()
-        navigate('/')
+        navigate('/parks')
         let user = {
             username,
             password
@@ -45,11 +45,10 @@ function Login( {setUser, navigate} ) {
 
             <label>
               Password
-            <input type="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </label>
             <input type="submit" value="Login" />
           </form>
-          <Link to='/'>Home</Link>
         </div>
       </div>
     );
