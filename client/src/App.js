@@ -9,6 +9,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import ParksPage from './components/ParksPage';
 import ParkDetail from './components/ParkDetail';
+import EditReviewForm from './components/EditReviewForm';
 
 function App() {
   const [parks, setParks] = useState([])
@@ -26,7 +27,7 @@ function App() {
       fetch('/parks')
       .then(response => response.json())
       .then(parksInitial => {
-        // console.log(parksInitial)
+        console.log(parksInitial)
         setParks(parksInitial)
       })
       .catch(err => console.error(err));
@@ -54,7 +55,7 @@ function App() {
         }
       })
     }
-// console.log(user)
+console.log(user)
 
   return (
     <div className="App">
@@ -68,6 +69,7 @@ function App() {
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} navigate={navigate} />} />
+        <Route exact path='/EditReviewForm' element={ <EditReviewForm />} />
         
         
       </Routes>

@@ -1,5 +1,7 @@
 import React, {useState} from "react";
-import {useLocation} from 'react-router-dom';
+import {useLocation, Link} from 'react-router-dom';
+
+import EditReviewForm from './EditReviewForm'
 
 
 function ParkDetail( {user, setReviews} ) {
@@ -26,14 +28,12 @@ function ParkDetail( {user, setReviews} ) {
   //   <span onClick={toggleEditMode}>{newReviewContent}</span>
   // )
 
-const reviewEdit = () => {
-  console.log(user.id)
-}
+
 
   const individualReviewArray = reviews.map(review=> (
     <>
     <li key={reviews["id"]}> {review["content"]}</li>
-    {user.id === review.user_id  ? <button onClick={reviewEdit}>edit</button>: ""}
+    {user.id === review.user_id  ? <Link to="/EditReviewForm" >Edit</Link> : null}
     </>
   ))
 
@@ -57,7 +57,7 @@ const reviewEdit = () => {
     .then(r=>r.json())
     .then(newReview => {
       console.log(newReview)
-      setReviews([...individualReviewArray, newReviewContent])
+      setReviews([...individualReviewArray, newReview])
       setNewReviewContent("")
     })
   }
@@ -94,7 +94,7 @@ const reviewEdit = () => {
         type="text-area"
         className="review-textarea"
         placeholder="Add Review..." 
-        value={newReviewContent} 
+        value={user.newReviewContent} 
         onChange={(e)=>setNewReviewContent(e.target.value)}
         />
       </form>
