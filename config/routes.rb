@@ -4,14 +4,21 @@ Rails.application.routes.draw do
   resources :parks, only: [:index, :show]
   resources :users, only:[:create, :show]
 
+# users
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
-  # get '/authorized_user', to: 'users#show'
+  get '/auth', to: 'users#show'
+
+# parks
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
-  get '/auth', to: 'users#show'
+
+#reviews
+  get '/reviews', to: 'reviews#index'
+  get '/reviews', to: 'reviews#create'
   
-  #logging in and logging out
+  
+#logging in and logging out
   post "/login", to: "sessions#create"
   delete '/logout', to: 'sessions#destroy'
 

@@ -7,7 +7,7 @@ function Home( {user} ) {
   return(
 
     <div id="home-parent-div">
-      <p>Welcome...{user ? user.username : " "}</p>
+
       <section className="hero">
         <img src="https://images.pexels.com/photos/8909842/pexels-photo-8909842.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
         <img src="https://images.pexels.com/photos/8909837/pexels-photo-8909837.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
@@ -23,8 +23,8 @@ function Home( {user} ) {
       <section className="home-bottom-container">
         <h2><strong className="home-bottom-title">Who we are...</strong></h2>
         <h2>This is a dedicated place for any outdoor parks, trails, or anyplace outdoors really!! <br/>Now that you have found us, why don't you just "ParkIt" for awhile and we'll help with your next adventure!</h2>
+        <h2>Sign up or Log in to add new places you have visited and leave reviews...</h2>
         <h2>Use the Discover tab at the top to find new parks!</h2>
-        <h2>You can also sign up to add new places you have visited and leave reviews...</h2>
       </section>
     </div>
     

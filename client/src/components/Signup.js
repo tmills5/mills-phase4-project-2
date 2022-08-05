@@ -43,7 +43,7 @@ function Signup( {setUser, navigate} ) {
           </label>
           <label>
           Password
-          <input type="current-password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
           </label>
           <input type="submit" value="Sign up!" />
         </form>

@@ -1,12 +1,12 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import ParkDetail from "./ParkDetail";
+
 
 
 
 function Card( { park } ) {
     const { id, full_name, state, description, image} = park
-    console.log(park)
+
 
     return(
         <div className="box">
