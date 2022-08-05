@@ -19,7 +19,7 @@ function Card( { park } ) {
                 <div className="media-content">
                     <div className="content">
                         <p>
-                              Park: {full_name} / <small>{state}</small>
+                            {full_name} / <small>{state}</small>
                     <br/>
                             {description}
                         </p>

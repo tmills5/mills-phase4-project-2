@@ -7,13 +7,13 @@ function ParkDetail() {
   const {park} = location.state
     console.log(park)
 
-    const {fullName, state, description, image, url} = park
+    const {full_name, state, description, image, url} = park
 
     const allReviews = park.reviews.map(i=> (
-      <li> {i["content"]}</li>
+      <li key={park.reviews["id"]}> {i["content"]}</li>
     ))
 
-    
+
     return(
         <>
             <div className="card">
@@ -27,7 +27,7 @@ function ParkDetail() {
       <div className="media-left">
       </div>
       <div className="media-content">
-        <p className="title is-4">{fullName}</p>
+        <p className="title is-4">{full_name}</p>
         <p className="subtitle is-6">{state}</p>
       </div>
     </div>
@@ -35,9 +35,9 @@ function ParkDetail() {
     <div className="content">
       {description}
       <br/>
-      <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-      <div>{url}-----fake</div>
-      <div>{allReviews}</div>
+      <div>{url}-----fake url</div>
+
+      <div>Reviews: {allReviews}</div>
     </div>
   </div>
 </div>
