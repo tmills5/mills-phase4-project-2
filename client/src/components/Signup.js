@@ -9,6 +9,7 @@ function Signup( {setUser, navigate} ) {
   function onSubmit(e){
     e.preventDefault()
     navigate('/parks');
+
       let user = {
           name: username,
           password
@@ -26,7 +27,6 @@ function Signup( {setUser, navigate} ) {
         if(userEnteredJson.errors) setErrors(Object.entries(userEnteredJson.errors))
       })
       console.log(errors)
-      setUser(user);
       setUsername('');
       setPassword('');
     

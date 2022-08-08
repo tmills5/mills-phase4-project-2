@@ -18,8 +18,8 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    getParks();
     getAuth();
+    getParks();
     getReviews();
   },[]);
 
@@ -46,16 +46,22 @@ function App() {
     // auto logging in the user and directing them to login if not
     const getAuth = () => {  
       fetch('/auth')
-      .then(res => {
-        if(res.ok){
-          res.json()
-          .then(user => 
-            setUser(user)
-            )
+      .then((response)=> {
+        if(response.ok) {
+          response.json()
+          .then((user)=> setUser(user))
         }
       })
+      // .then(res => {
+      //   if(res.ok){
+      //     res.json()
+      //     .then(user => 
+      //       setUser(user)
+      //       )
+      //   }
+      // })
     }
-console.log(user)
+// console.log(user)
 
   return (
     <div className="App">

@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       user = User.find_by!(name:params[:username])
       if user&.authenticate(params[:password])
           session[:user_id] = user.id
-          render json: { user: "Welcome to ParkIt!!" }, status: :created
+          render json: {user: "Welcome to ParkIt!"}, status: :created
           # byebug
       else 
           render json: { error: "Invalid Username or Password" }, status: :unprocessable_entity

@@ -4,17 +4,16 @@ import React, {useState} from 'react'
 function Login( {setUser, navigate} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-   
     const [errors, setErrors] = useState([])
 
     function onSubmit(e){
         e.preventDefault()
         navigate('/parks')
+
         let user = {
             username,
             password
         }
-       
         // console.log(user)
 
         fetch('/login',{
