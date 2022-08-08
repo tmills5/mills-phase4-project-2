@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 # users
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
-  get '/auth', to: 'users#show'
+  get '/authorized_user', to: 'users#show'
 
 # parks
   get '/parks', to: 'parks#index'
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
   
 #logging in and logging out
-  post "/login", to: "sessions#create"
+  post "/login", to: "sessions#login"
   delete '/logout', to: 'sessions#destroy'
 
 

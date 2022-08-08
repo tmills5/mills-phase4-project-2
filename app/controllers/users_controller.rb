@@ -2,18 +2,19 @@ class UsersController < ApplicationController
     wrap_parameters format: []
 
     def index
-      users = User.all
-      render json: users
+        render json: User.all
     end
   
     def create 
         user = User.create!(user_params)
+        session[:current_user] = user.id
         render json: user, status: :created
-        session[:user_id] = user.id
     end
 
     def show
-        current_user = User.find(session[:user_id])
+        # using session to find user in question. sessions are in user browser
+        # if session for user currently happening. set our user to that user and render json
+        current_user = User.find_by!(id: session[:current_user])
         render json: current_user
     end
   

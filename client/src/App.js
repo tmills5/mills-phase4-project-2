@@ -45,7 +45,7 @@ function App() {
 
     // auto logging in the user and directing them to login if not
     const getAuth = () => {  
-      fetch('/auth')
+      fetch('/authorized_user')
       .then((response)=> {
         if(response.ok) {
           response.json()
