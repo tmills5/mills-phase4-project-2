@@ -7,15 +7,14 @@ import EditReviewForm from './EditReviewForm'
 function ParkDetail( {user, setReviews} ) {
   console.log(user)
   const [newReviewContent, setNewReviewContent] = useState('');
-  const [editMode, setEditMode] = useState(false);
+  // const [editMode, setEditMode] = useState(false);
   // passing individual park info through Link-RouterV6 way
   const location = useLocation();
   const {park} = location.state
 
   const {full_name, state, description, image, url, reviews} = park
-  const {id, name} = user
 // editing the reviews that logged in user submitted
-  const toggleEditMode = () => {setEditMode(!editMode)}
+  // const toggleEditMode = () => {setEditMode(!editMode)}
 
 
  
@@ -36,7 +35,7 @@ function ParkDetail( {user, setReviews} ) {
   const individualReviewArray = reviews.map(review=> (
     <>
     <li> {review["content"]}</li>
-    {user.id === review.user_id  ? <Link to="/EditReviewForm" >Edit</Link> : null}
+    if {user.id === review.user_id  ? <Link to="/EditReviewForm" >Edit</Link> : null}
     </>
   ))
 

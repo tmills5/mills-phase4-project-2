@@ -9,7 +9,7 @@ function Navigation( {user, setUser} ) {
         fetch('/logout', {
           method: 'DELETE'
         })
-       setUser(); 
+       setUser(null); 
       }
 
   return (

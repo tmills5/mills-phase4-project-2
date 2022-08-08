@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 
 
-function Card( { park } ) {
+function ParkCard( { park } ) {
     const { id, full_name, state, description, image} = park
 
 
@@ -31,4 +31,4 @@ function Card( { park } ) {
     );
 }
 
-export default Card;
+export default ParkCard;
