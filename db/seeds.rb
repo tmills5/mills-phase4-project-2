@@ -1,6 +1,6 @@
 User.destroy_all
 Park.destroy_all
-Review.destroy_all
+Pass.destroy_all
 
 
 
@@ -25,8 +25,8 @@ end
 end
 
 20.times do
-  Review.create!(
-    content: Faker::Lorem.paragraph(sentence_count: 1),
+  Pass.create!(
+    price: Faker::Commerce.price(range: 0..10.0, as_string: true),
     user_id: rand(1..5),
     park_id: rand(1..10)
   )

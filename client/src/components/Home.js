@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Home( {user} ) {
+function Home() {
 
 
   return(
@@ -22,8 +22,8 @@ function Home( {user} ) {
 
       <section className="home-bottom-container">
         <h2><strong className="home-bottom-title">Who we are...</strong></h2>
-        <h2>This is a dedicated place for any outdoor parks, trails, or anyplace outdoors really!! <br/>Now that you have found us, why don't you just "ParkIt" for awhile and we'll help with your next adventure!</h2>
-        <h2>Sign up or Log in to add new places you have visited and leave reviews...</h2>
+        <h2>This is a dedicated place for parks, trails, or anyplace outdoors really!! <br/>Now that you have found us, why don't you just "ParkIt" for awhile and we'll help with your next adventure!</h2>
+        <h2>Sign up or Log in...</h2>
         <h2>Use the Discover tab at the top to find new parks!</h2>
       </section>
     </div>

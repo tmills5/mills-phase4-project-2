@@ -1,6 +1,6 @@
 
 Rails.application.routes.draw do
-  resources :reviews
+  resources :passes
   resources :parks, only: [:index, :show]
   resources :users, only:[:create, :show]
 
@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
 
-#reviews
-  get '/reviews', to: 'reviews#index'
-  get '/reviews', to: 'reviews#create'
+#passes
+  get '/passes', to: 'passes#index'
+  get '/passes', to: 'passes#create'
   
   
 #logging in and logging out

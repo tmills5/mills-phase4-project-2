@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "./ParkCard"
+import ParkCard from "./ParkCard"
 
 
 
@@ -24,7 +24,7 @@ function ParksPage( {parks, user} ) {
             onChange={(e)=> setParkNameQuery(e.target.value)}
             ></input> */}
 
-            {parks.map(park=> (<Card key={park.id} park={park} />))}
+            {parks.map(park=> (<ParkCard key={park.id} park={park} />))}
             </div>
             :
             <p style={{"textAlign": "center"}}>Please Sign up or Log in...</p>

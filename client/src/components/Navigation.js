@@ -2,15 +2,19 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Navigation( {user, setUser} ) {
+function Navigation( {user, setUser, setIsAuthenticated} ) {
   console.log(user)
 
     const logout = () => {
         fetch('/logout', {
           method: 'DELETE'
         })
-       setUser(null); 
+        .then(()=>{
+          // setIsAuthenticated(false);
+          setUser(null);
+        })
       }
+      
 
   return (
     <nav className="navbar" role="navigation" aria-label="main navigation">
@@ -35,7 +39,7 @@ function Navigation( {user, setUser} ) {
 
 
           <div className="navbar-item" onClick={logout}>
-            <Link to='/logout'>Log Out</Link>
+            <button>Log Out</button>
           </div>
 
       </div>

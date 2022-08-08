@@ -9,75 +9,65 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import ParksPage from './components/ParksPage';
 import ParkDetail from './components/ParkDetail';
-import EditReviewForm from './components/EditReviewForm';
+import ParkForm from './components/ParkForm';
 
 function App() {
-  const [parks, setParks] = useState([])
+  const [parks, setParks] = useState([]);
   const [user, setUser] = useState(null);
-  const [reviews, setReviews] = useState([]);
+  const [errors, setErrors] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    getAuth();
-    getParks();
-    getReviews();
+    fetch('/authorized_user')
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setIsAuthenticated(true);
+          setUser(user);
+
+          fetch('/parks')
+          .then(res => res.json())
+          .then(setParks);
+        });
+      }
+    });
   },[]);
 
-    const getParks = () => {
-      fetch('/parks')
-      .then(response => response.json())
-      .then(parksInitial => {
-        console.log(parksInitial)
-        setParks(parksInitial)
-      })
-      .catch(err => console.error(err));
-    }
-
-    const getReviews = () => {
-      fetch('/reviews')
-      .then(response => response.json())
-      .then(reviewsInitial => {
-        // console.log(reviewsInitial)
-        setReviews(reviewsInitial)
-      })
-      .catch(err => console.error(err));
-    }
-
-    // auto logging in the user and directing them to login if not
-    const getAuth = () => {  
-      fetch('/authorized_user')
-      .then((response)=> {
-        if(response.ok) {
-          response.json()
-          .then((user)=> setUser(user))
-        }
-      })
-      // .then(res => {
-      //   if(res.ok){
-      //     res.json()
-      //     .then(user => 
-      //       setUser(user)
-      //       )
-      //   }
-      // })
-    }
-// console.log(user)
-
+  function handlePost(obj){
+    fetch('/parks',{
+      method:'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(obj)
+    })
+    .then(res => res.json())
+    .then(newPark => {
+      if(newPark.errors){
+        setErrors(newPark.errors)
+      } else {
+        setParks([...parks,newPark])
+      }
+    })
+}
+if (!isAuthenticated) return <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
+// console.log(parks)
   return (
     <div className="App">
-      <Navigation user={user} setUser={setUser} />
+      <Navigation cart={cart} user={user} setUser={setUser} />
       <hr/>
       <Routes>
 
         <Route exact path='/' element={ <Home  user={user} />} />
         <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} />} />
-        <Route exact path='/parks/:id' element={ <ParkDetail user={user} reviews={reviews} setReviews={setReviews}/>} />
+        <Route exact path='/parks/:id' element={ <ParkDetail user={user} cart={cart} setCart={setCart}/>} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} navigate={navigate} />} />
-        <Route exact path='/EditReviewForm' element={ <EditReviewForm reviews={reviews}/>} />
-        
-        
+        <Route exact path='/login' element={ <ParkForm handlePost={handlePost} errors={errors} />} />
+
       </Routes>
     </div>
   );
