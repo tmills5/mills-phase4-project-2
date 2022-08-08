@@ -52,21 +52,21 @@ function App() {
       }
     })
 }
-if (!isAuthenticated) return <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
-// console.log(parks)
+
+console.log(parks)
   return (
     <div className="App">
       <Navigation cart={cart} user={user} setUser={setUser} />
       <hr/>
       <Routes>
 
-        <Route exact path='/' element={ <Home  user={user} />} />
+        <Route exact path='/' element={ <Home  user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>} />
         <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} />} />
         <Route exact path='/parks/:id' element={ <ParkDetail user={user} cart={cart} setCart={setCart}/>} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} navigate={navigate} />} />
-        <Route exact path='/login' element={ <ParkForm handlePost={handlePost} errors={errors} />} />
+        <Route exact path='/' element={ <ParkForm handlePost={handlePost} errors={errors} />} />
 
       </Routes>
     </div>

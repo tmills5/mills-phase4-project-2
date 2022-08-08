@@ -9,10 +9,11 @@ function Navigation( {user, setUser, setIsAuthenticated} ) {
         fetch('/logout', {
           method: 'DELETE'
         })
-        .then(()=>{
-          // setIsAuthenticated(false);
-          setUser(null);
-        })
+          // .then(
+          //   setIsAuthenticated(false);
+          //   setUser(null);
+          // )
+          
       }
       
 

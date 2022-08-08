@@ -8,7 +8,7 @@ function Login( {setUser, navigate} ) {
 
     function onSubmit(e){
         e.preventDefault()
-        navigate('/parks')
+        // navigate('/parks')
 
         let user = {
             username,
@@ -36,6 +36,7 @@ function Login( {setUser, navigate} ) {
     return (
       <div className="container is-fluid">
         <div className="notification is-primary">
+        <p style={{"textAlign": "center"}}>Please Sign up or Log in to Discover...</p>
           <form onSubmit={onSubmit}>
             <label>
               Username

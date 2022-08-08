@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import ParkCard from "./ParkCard"
+import ParkCard from "./ParkCard";
+import Login from './Login'
 
 
 
-function ParksPage( {parks, user} ) {
+function ParksPage( {parks, user, isAuthenticated, setIsAuthenticated, setUser} ) {
     // const [parkNameQuery, setParkNameQuery] = useState("");
 
     // const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
@@ -11,10 +12,10 @@ function ParksPage( {parks, user} ) {
 
 // console.log(parks[0][fullName])
 
+if (!user) return <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
 
     return(
         <div>
-            {user ?
             <div className="park-list-container">
             {/* <input 
             className="input is-primary" 
@@ -26,9 +27,6 @@ function ParksPage( {parks, user} ) {
 
             {parks.map(park=> (<ParkCard key={park.id} park={park} />))}
             </div>
-            :
-            <p style={{"textAlign": "center"}}>Please Sign up or Log in...</p>
-            }
         </div>
 
 
