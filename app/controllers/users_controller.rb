@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    skip_before_action :authorized_user
     wrap_parameters format: []
 
     def index

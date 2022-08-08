@@ -5,14 +5,10 @@ class ApplicationController < ActionController::API
   # rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
   # runs any method that i specify b4 an action runs
-  before_action :authorized_user
+  # before_action :authorized_user
 
 
-  def authorized_user
-    render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
-      # if our session includes the right id then we'll send the right thing else we'll send the error
-    # end
-  end
+
 
 
   private

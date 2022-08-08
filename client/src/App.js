@@ -75,7 +75,7 @@ function App() {
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/login' element={ <Login user={user} setUser={setUser} navigate={navigate} />} />
-        <Route exact path='/EditReviewForm' element={ <EditReviewForm />} />
+        <Route exact path='/EditReviewForm' element={ <EditReviewForm reviews={reviews}/>} />
         
         
       </Routes>

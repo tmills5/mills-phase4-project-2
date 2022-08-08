@@ -1,6 +1,7 @@
 class ParksController < ApplicationController
     wrap_parameters format: []
-    
+    before_action :authorize
+
     def index
         # byebug
         parks = Park.all
@@ -25,6 +26,11 @@ class ParksController < ApplicationController
     
     def park_params
         params.permit(:full_name, :state, :description, :image, :url)
+    end
+
+    def authorize
+        return render json: {error: "Not Authorized"}, status: :unauthorized unless session.include? :user_id
+          # if our session includes the right id then we'll send the right thing else we'll send the error
     end
 
 end

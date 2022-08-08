@@ -4,10 +4,10 @@ import Card from "./Card"
 
 
 function ParksPage( {parks, user} ) {
-    const [parkNameQuery, setParkNameQuery] = useState("");
+    // const [parkNameQuery, setParkNameQuery] = useState("");
 
-    const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
-        park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
+    // const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
+    //     park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
 
 // console.log(parks[0][fullName])
 
@@ -16,15 +16,15 @@ function ParksPage( {parks, user} ) {
         <div>
             {user ?
             <div className="park-list-container">
-            <input 
+            {/* <input 
             className="input is-primary" 
             type="text" 
             placeholder="Search for parks..." 
             value={parkNameQuery} 
             onChange={(e)=> setParkNameQuery(e.target.value)}
-            ></input>
+            ></input> */}
 
-            {filteredParksArray.map(park=> (<Card key={park.id} park={park} />))}
+            {parks.map(park=> (<Card key={park.id} park={park} />))}
             </div>
             :
             <p style={{"textAlign": "center"}}>Please Sign up or Log in...</p>

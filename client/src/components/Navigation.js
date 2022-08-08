@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 function Navigation( {user, setUser} ) {
-  // console.log(user)
+  console.log(user)
 
     const logout = () => {
         fetch('/logout', {
@@ -37,7 +37,7 @@ function Navigation( {user, setUser} ) {
           <div className="navbar-item" onClick={logout}>
             <Link to='/logout'>Log Out</Link>
           </div>
-          <p>{user ? user.username : " "}</p>
+
       </div>
       <div className="nav-title">
         ParkIt
