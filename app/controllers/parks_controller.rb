@@ -21,6 +21,16 @@ class ParksController < ApplicationController
         render json: {error: "Park Not Found"}, status: :not_found
         end
     end
+
+    def destroy
+        park = Park.find_by!(id: params[:id])
+        if park
+            park.destroy
+            head :no_content
+        else
+            render json: {error: "Park Not Found"}, status: :not_found
+        end
+    end
     
     private
     

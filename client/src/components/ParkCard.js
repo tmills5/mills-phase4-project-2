@@ -4,8 +4,9 @@ import {Link} from "react-router-dom";
 
 
 
-function ParkCard( { park } ) {
+function ParkCard( { park, user, onDeletePark, onUpdatePark } ) {
     const { id, full_name, state, description, image} = park
+
 
 
     return(
@@ -24,6 +25,13 @@ function ParkCard( { park } ) {
                             {description}
                         </p>
                         <Link to={`/parks/${id}`}  state={{park}} >Click for more details..</Link>
+                    </div>
+                    <div>{user.is_admin ? 
+                        <>
+                        <button onClick={()=>onDeletePark(id)}>delete</button>
+                        </>
+                        : 
+                        ''}
                     </div>
                 </div>
             </article>

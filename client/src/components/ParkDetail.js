@@ -3,7 +3,7 @@ import {useLocation, Link} from 'react-router-dom';
 
 
 
-function ParkDetail( {user, setReviews} ) {
+function ParkDetail( {user, onUpdatePark} ) {
   console.log(user)
   // const [editMode, setEditMode] = useState(false);
   // passing individual park info through Link-RouterV6 way
@@ -35,6 +35,7 @@ function ParkDetail( {user, setReviews} ) {
           <div>{url}-----fake url</div>
           <div>Reviews:</div>
         </div>
+        {user.is_admin ? <Link to='/ParkForm'>Edit</Link> : ""}
       </div>
       <br/>
     </>

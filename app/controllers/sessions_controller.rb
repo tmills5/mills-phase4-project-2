@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       # authenticate
       if user&.authenticate(params[:password])
           session[:current_user] = user.id
-          render json: {user: "Welcome to ParkIt!"}, status: :ok
+          render json: user, status: :ok
           # byebug
       else 
           render json: { error: "Invalid Username or Password" }, status: :unauthorized

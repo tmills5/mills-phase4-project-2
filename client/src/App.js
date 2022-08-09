@@ -13,10 +13,9 @@ import ParkForm from './components/ParkForm';
 
 function App() {
   const [parks, setParks] = useState([]);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [errors, setErrors] = useState([]);
   const [cart, setCart] = useState([]);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const navigate = useNavigate();
 
@@ -26,7 +25,6 @@ function App() {
       if (res.ok) {
         res.json()
         .then((user) => {
-          setIsAuthenticated(true);
           setUser(user);
 
           fetch('/parks')
@@ -51,22 +49,45 @@ function App() {
         setParks([...parks,newPark])
       }
     })
-}
+  }
 
-console.log(parks)
+  function handleUpdatePark(updatedPark) {
+    const updatedParks = parks.map((park) => {
+      if (park.id === updatedPark.id) {
+        return updatedPark;
+      } else {
+        return park;
+      }
+    });
+    setParks(updatedParks);
+  }
+  // }
+
+  function handleDeletePark(id) {
+    fetch(`/parks/${id}`, {
+      method: 'DELETE',
+      headers: {'Accept': 'application/json'}
+    })
+    .then(()=> {
+      let updatedParks = parks.filter(park => park.id !== id)
+      setParks(updatedParks)
+    })
+  }
+
+
   return (
     <div className="App">
-      <Navigation cart={cart} user={user} setUser={setUser} />
+      <Navigation cart={cart} user={user} setUser={setUser}  navigate={navigate} />
       <hr/>
       <Routes>
 
-        <Route exact path='/' element={ <Home  user={user} setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>} />
-        <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} />} />
-        <Route exact path='/parks/:id' element={ <ParkDetail user={user} cart={cart} setCart={setCart}/>} />
-        <Route exact path='/logout' element={ <Logout />} />
+        <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />
+        <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} onDeletePark={handleDeletePark} onUpdatePark={handleUpdatePark} /> } />
+        <Route exact path='/parks/:id' element={ <ParkDetail user={user} />} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
-        <Route exact path='/login' element={ <Login user={user} setUser={setUser} navigate={navigate} />} />
-        <Route exact path='/' element={ <ParkForm handlePost={handlePost} errors={errors} />} />
+        <Route exact path='/logout' element={ <Logout />} />
+        <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser}/>} />
+        <Route exact path='/ParkForm' element={ <ParkForm handlePost={handlePost} errors={errors} navigate={navigate}/>} />
 
       </Routes>
     </div>

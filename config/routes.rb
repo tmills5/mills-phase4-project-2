@@ -1,19 +1,21 @@
 
 Rails.application.routes.draw do
   resources :passes
-  resources :parks, only: [:index, :show]
+  resources :parks, only: [:index, :show, :create, :update, :destroy]
   resources :users, only:[:create, :show]
 
 # users
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
+  # authenticate user initially
   get '/authorized_user', to: 'users#show'
 
-# parks
+# # parks
   get '/parks', to: 'parks#index'
   get '/parks/:id', to: 'parks#show'
+  
 
-#passes
+# #passes
   get '/passes', to: 'passes#index'
   get '/passes', to: 'passes#create'
   

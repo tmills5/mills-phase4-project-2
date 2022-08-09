@@ -7,10 +7,17 @@ Pass.destroy_all
 
 puts "Seeding...."
 
+User.create!(
+  name: "admin",
+  password: "admin",
+  is_admin: "true"
+)
+
 5.times do
   User.create!(
     name: Faker::Name.first_name,
-    password: "123"
+    password: "123",
+    is_admin: "false"
   )
 end
 

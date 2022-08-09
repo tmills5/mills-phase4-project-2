@@ -6,30 +6,36 @@ function Login( {setUser, navigate} ) {
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
 
-    function onSubmit(e){
+    const onSubmit = (e) =>{
         e.preventDefault()
-        // navigate('/parks')
+        navigate('/parks')
 
         let user = {
             username,
             password
         }
-        // console.log(user)
-
-        fetch('/login',{
+        
+        fetch(`/login`,{
           method:'POST',
           headers:{'Content-Type': 'application/json'},
           body:JSON.stringify(user)
         })
-        .then(res => res.json())
-        .then(user => {
-            console.log(user)
-            if(user.errors) setErrors(user.errors)
-        })
+        .then(res => {
+          if(res.ok){
+            res.json()
+            .then(user=>{
+              console.log(user)
+              setUser(user)
+              
+            })
+            
+          } else {
+            res.json()
+            .then(json => setErrors(json.error))
+          }
+        });
+
         console.log(errors)
-        setUser(user);
-        setUsername('');
-        setPassword('');
     }
 
 
