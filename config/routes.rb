@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
   resources :passes
-  resources :parks, only: [:index, :show, :create, :update, :destroy]
+  resources :parks
   resources :users, only:[:create, :show]
 
 # users
@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   get '/authorized_user', to: 'users#show'
 
 # # parks
-  get '/parks', to: 'parks#index'
-  get '/parks/:id', to: 'parks#show'
-  
+  # get '/parks', to: 'parks#index'
+  # get '/parks/:id', to: 'parks#show'
+  get '/parks/:id/edit', to: 'parks#update'
 
 # #passes
-  get '/passes', to: 'passes#index'
-  get '/passes', to: 'passes#create'
+  # get '/passes', to: 'passes#index'
+  # get '/passes', to: 'passes#create'
   
   
 #logging in and logging out

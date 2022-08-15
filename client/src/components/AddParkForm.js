@@ -1,6 +1,6 @@
 import React, { useState }from 'react';
 
-function ParkForm( {handlePost, errors, navigate}) {
+function AddParkForm( {handlePost, errors, navigate}) {
     const [formData, setFormData] = useState({
         full_name:'',
         state:'',
@@ -70,4 +70,4 @@ function ParkForm( {handlePost, errors, navigate}) {
     )
 }
 
-export default ParkForm;
+export default AddParkForm;

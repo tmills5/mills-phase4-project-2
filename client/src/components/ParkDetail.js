@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {useLocation, Link} from 'react-router-dom';
 
 
@@ -9,8 +9,8 @@ function ParkDetail( {user, onUpdatePark} ) {
   // passing individual park info through Link-RouterV6 way
   const location = useLocation();
   const {park} = location.state
-
-  const {full_name, state, description, image, url} = park
+console.log(park)
+  const {id, full_name, state, description, image, url} = park
 
 
   return(
@@ -35,7 +35,7 @@ function ParkDetail( {user, onUpdatePark} ) {
           <div>{url}-----fake url</div>
           <div>Reviews:</div>
         </div>
-        {user.is_admin ? <Link to='/ParkForm'>Edit</Link> : ""}
+        {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""}
       </div>
       <br/>
     </>

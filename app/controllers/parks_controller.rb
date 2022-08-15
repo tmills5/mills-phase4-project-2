@@ -22,6 +22,16 @@ class ParksController < ApplicationController
         end
     end
 
+    def update
+        park = Park.find_by(id: params[:id])
+        if park
+            park.update(park_params)
+            render json: park, status: :accepted
+        else
+            render json: {error: "Park Not Found"}, status: :not_found
+        end
+    end
+
     def destroy
         park = Park.find_by!(id: params[:id])
         if park

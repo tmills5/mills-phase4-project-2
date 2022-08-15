@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from 'react-router-dom';
 import ParkCard from "./ParkCard";
 // import Login from './Login'
@@ -16,7 +16,10 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
         <>
             {user ?
                 <div>
-                    {user.is_admin ? <Link to='/ParkForm'>Add Park</Link> : ""}
+                    {user.is_admin ? 
+                    <div className="button is-rounded"><Link to='/parks/new'>Add Park</Link></div>
+                    :
+                    ""}
                     <div className="park-list-container">
                         {/* <input 
                         className="input is-primary" 

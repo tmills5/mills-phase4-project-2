@@ -50,12 +50,12 @@ function Navigation( {user, setUser, navigate} ) {
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">
+              </div>
               <div className="button is-rounded" href='/'>
                 <Link to='/signup'><strong>Sign up</strong></Link>
               </div>
               <div className="button is-rounded is-success">
                 <Link to='/login'><strong>Log in</strong></Link>
-              </div>
             </div>
           </div>
         </div>
