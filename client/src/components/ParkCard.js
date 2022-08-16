@@ -22,9 +22,9 @@ function ParkCard( { park, user, onDeletePark, onUpdatePark } ) {
                         <p>
                             {full_name} / <small>{state}</small>
                     <br/>
-                            {description}
+                            {/* {description} */}
                         </p>
-                        <Link to={`/parks/${id}`}  state={{park}} >Click for more details..</Link>
+                        <Link to={`/parks/${park.id}`}  state={{park}} >Click for more details..</Link>
                     </div>
                     <div>{user.is_admin ? 
                         <>

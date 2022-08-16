@@ -6,7 +6,8 @@ function AddParkForm( {handlePost, errors, navigate}) {
         state:'',
         description:'',
         activities:'',
-        image:''
+        image:'',
+        url:''
       })
 
       function onSubmit(e){
@@ -18,7 +19,7 @@ function AddParkForm( {handlePost, errors, navigate}) {
           description: formData.description,
           activities: formData.activities,
           image: formData.image,
-          fee: formData.fee
+          url: formData.url
         }
         handlePost(park)
         navigate('/parks')
@@ -61,7 +62,7 @@ function AddParkForm( {handlePost, errors, navigate}) {
         <label>
         Park URL
         <br/>
-          <input className='add-form-fee' type="text" value={formData.url} onChange={(e) => setFormData({...formData, fee: e.target.value})} />
+          <input className='add-form-url' type="text" value={formData.url} onChange={(e) => setFormData({...formData, url: e.target.value})} />
         </label>
         <br/>
         <input type="submit" value="Submit Park" />

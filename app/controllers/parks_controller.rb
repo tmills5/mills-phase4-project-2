@@ -45,7 +45,7 @@ class ParksController < ApplicationController
     private
     
     def park_params
-        params.permit(:full_name, :state, :description, :activities, :image, :url)
+        params.permit(:id, :full_name, :state, :description, :activities, :image, :url)
     end
 
     def authorize

@@ -71,7 +71,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         <label>
         Park URL
         <br/>
-          <input className='add-form-fee' type="text" defaultValue={url} onChange={(e) => setFormData({...formData, fee: e.target.value})} />
+          <input className='add-form-url' type="text" defaultValue={url} onChange={(e) => setFormData({...formData, url: e.target.value})} />
         </label>
         <br/>
         <input type="submit" value="Update Park" />

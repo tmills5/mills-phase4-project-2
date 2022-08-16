@@ -89,7 +89,7 @@ function App() {
 
         <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />
         <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} onDeletePark={handleDeletePark} /> } />
-        <Route exact path='/parks/:id' element={ <ParkDetail user={user} />} />
+        <Route exact path='/parks/:id' element={ <ParkDetail user={user} parks={parks}/>} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser}/>} />

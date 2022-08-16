@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 # # parks
   # get '/parks', to: 'parks#index'
-  # get '/parks/:id', to: 'parks#show'
+  get '/parks/:id', to: 'parks#show'
   get '/parks/:id/edit', to: 'parks#update'
 
 # #passes

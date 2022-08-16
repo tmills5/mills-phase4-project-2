@@ -6,6 +6,7 @@ import ParkCard from "./ParkCard";
 
 
 function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
+    console.log(parks)
     // const [parkNameQuery, setParkNameQuery] = useState("");
 
     // const filteredParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
@@ -29,7 +30,12 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                         onChange={(e)=> setParkNameQuery(e.target.value)}
                         ></input> */}
 
-                {parks.map(park=> (<ParkCard key={park.id} park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>))}
+                {parks.map(park=> (
+                    <>
+                <ParkCard key={park.id} park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
+                {/* <Link to={`/parks/${park.id}`}>More</Link> */}
+                    </>
+                ))}
                     </div>
                 </div>
 
