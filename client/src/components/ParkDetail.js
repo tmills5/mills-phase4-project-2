@@ -10,7 +10,7 @@ function ParkDetail( {user, onUpdatePark} ) {
   const location = useLocation();
   const {park} = location.state
 console.log(park)
-  const {id, full_name, state, description, image, url} = park
+  const {id, full_name, state, description, activities, image, url} = park
 
 
   return(
@@ -33,7 +33,7 @@ console.log(park)
         <div className="content"> {description}
               <br/>
           <div>{url}-----fake url</div>
-          <div>Reviews:</div>
+          <div>Activities: {activities}</div>
         </div>
         {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""}
       </div>

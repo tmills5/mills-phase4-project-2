@@ -26,6 +26,7 @@ end
     full_name: Faker::Mountain.name,
     state: Faker::Address.state,
     description: Faker::Lorem.paragraph(sentence_count: 4),
+    activities: Faker::Hipster.words(number: 4, supplemental: true, spaces_allowed: true),
     image: Faker::LoremFlickr.image(size: "50x60", search_terms: ['trails', 'parks', 'mountain'], match_all: true),
     url: Faker::Internet.url
   )

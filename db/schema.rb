@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_145352) do
     t.string "full_name"
     t.string "state"
     t.text "description"
+    t.text "activities"
     t.string "image"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_07_31_145352) do
   end
 
   create_table "passes", force: :cascade do |t|
-    t.string "price"
+    t.float "price"
     t.integer "user_id"
     t.integer "park_id"
     t.datetime "created_at", precision: 6, null: false

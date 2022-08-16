@@ -7,7 +7,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
     const {park} = location.state
     console.log(park)
 
-    const {id, full_name, state, description, image, url} = park
+    const { full_name, state, description, activities, image, url} = park
 
     const [formData, setFormData] = useState({
         // full_name: {full_name},
@@ -17,8 +17,6 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         // image: 'park.image'
         park
       })
-
-  
 
 
       function handleParkUpdate(e){
@@ -35,6 +33,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
                 description: formData.description,
                 activities: formData.activities,
                 image: formData.image,
+                url: formData.url,
                 fee: formData.fee
             }),
         })
@@ -43,6 +42,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
                 // console.log(updatedPark)
                 onUpdatePark(updatedPark)
             })
+            navigate('/parks')
       }
 
     return(
@@ -70,7 +70,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         <label>
         Activities
         <br/>
-          <textarea className='add-form-activities' type="text" defaultValue="{activities}" onChange={(e) => setFormData({...formData, activities: e.target.value})} />
+          <textarea className='add-form-activities' type="text" defaultValue={activities} onChange={(e) => setFormData({...formData, activities: e.target.value})} />
         </label>
         <br/>
         <label>
@@ -80,9 +80,9 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         </label>
         <br/>
         <label>
-        Pass Fee
+        Park URL
         <br/>
-          <input className='add-form-fee' type="text" defaultValue="{fee}" onChange={(e) => setFormData({...formData, fee: e.target.value})} />
+          <input className='add-form-fee' type="text" defaultValue={url} onChange={(e) => setFormData({...formData, fee: e.target.value})} />
         </label>
         <br/>
         <input type="submit" value="Update Park" />
