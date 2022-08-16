@@ -108,10 +108,22 @@ h2 {
 
 /* Parks Detail--------------------------------- */
 
-/* .image-detail {
-  height: 400px;
-  width: 1000px;
-} */
+.title {
+  margin: 5px;
+}
+
+.subtitle {
+  padding: 10px;
+}
+
+.content {
+  padding: 15px;
+  margin: 10px;
+}
+
+.activities {
+  padding: 10px;
+}
 
 /* Sign up --Log in------------------------- */
 

@@ -4,15 +4,16 @@ import {useLocation, Link} from 'react-router-dom';
 
 
 function ParkDetail( {user} ) {
-  console.log(user)
-  // const [editMode, setEditMode] = useState(false);
+  // console.log(user)
+
   // passing individual park info through Link-RouterV6 way
   const location = useLocation();
   const {park} = location.state
-console.log(park)
+ console.log(park)
   const { full_name, state, description, activities, image, url} = park
-console.log(activities)
-
+// console.log(activities)
+// console.log(park.passes[0]["price"])
+  let price = park.passes[0]["price"]
   return(
     <>
       <div className="card">
@@ -21,19 +22,23 @@ console.log(activities)
                 <img src={image} alt=""/>
               </figure>
         </div>
-<br/>
+        <br/>
         <div className="card-content">
 
           <div className="media-content">
-            <p className="title is-4">{full_name}</p>
-            <p className="subtitle is-6">{state}</p>
+            <p className="title is-2">{full_name}</p>
+            <p className="subtitle is-4">{state}</p>
           </div>
         </div>
 
         <div className="content"> {description}
               <br/>
           <a href={url}>{url}</a>
-          <div>Activities: <br/>{activities}</div>
+          <div className="activities"><u>Activities:</u> 
+          <br/>
+          {activities}
+          </div>
+          <div>Park Pass Fee: ${price}</div>
         </div>
         {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""}
       </div>

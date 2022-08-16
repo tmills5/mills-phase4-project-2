@@ -31,6 +31,7 @@ Park.create(
   activities: activities.sample(5).join(', '), 
   image: "https://www.nps.gov/common/uploads/structured_data/317D3E74-B539-A668-469F5AFB6CD52961.jpg", 
   url: "https://www.nps.gov/alka/index.htm")
+
 Park.create(
   full_name: "Big Thicket National Preserve",
   state: "TX",
@@ -39,6 +40,7 @@ Park.create(
   image: "https://www.nps.gov/common/uploads/structured_data/5CD6D99E-E546-9968-747215A9C8E9D695.jpg",
   url: "https://www.nps.gov/bith/index.htm"
 )
+
 Park.create(
   full_name: "Black Canyon Of The Gunnison National Park",
   state: "CO",
@@ -47,6 +49,7 @@ Park.create(
   image: "https://www.nps.gov/common/uploads/structured_data/3C81655F-1DD8-B71B-0B4BCFFDB74EE723.jpg",
   url: "https://www.nps.gov/blca/index.htm"
 )
+
 Park.create!(
   full_name: "Biscayne National Park",
   state: "FL",
@@ -55,6 +58,7 @@ Park.create!(
   image: "https://www.nps.gov/common/uploads/structured_data/E789390E-C7B5-2B1F-13974FC0EA9C7BD6.jpg",
   url: "https://www.nps.gov/bisc/index.htm"
 )
+
 Park.create(  
   full_name: "Boston Harbor Islands National Recreation Area",
   state: "MA",
@@ -65,12 +69,11 @@ Park.create(
 )
 
 
-20.times do
-  Pass.create(
-    price: Faker::Commerce.price,
-    user_id: rand(1..5),
-    park_id: rand(1..10)
-  )
-end
 
+  Pass.create( price: 10.00, user_id: rand(1..5), park_id: 1)
+  Pass.create( price: 20.00, user_id: rand(1..5), park_id: 2)
+  Pass.create( price: 0.00, user_id: rand(1..5), park_id: 3)
+  Pass.create( price: 15.00, user_id: rand(1..5), park_id: 4)
+  Pass.create( price: 17.25, user_id: rand(1..5), park_id: 5)
+  
 puts "...Done seeding"

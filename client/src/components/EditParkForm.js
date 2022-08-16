@@ -7,17 +7,9 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
     const {park} = location.state
     console.log(park)
 
-    const { full_name, state, description, activities, image, url} = park
+    const { full_name, state, description, activities, image, url } = park
 
-    const [formData, setFormData] = useState({
-        // full_name: {full_name},
-        // state: 'park.state',
-        // description: 'park.description',
-        // activities: 'park.activities',
-        // image: 'park.image'
-        park
-      })
-
+    const [formData, setFormData] = useState( {park} )
 
       function handleParkUpdate(e){
         e.preventDefault()
@@ -34,7 +26,6 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
                 activities: formData.activities,
                 image: formData.image,
                 url: formData.url,
-                fee: formData.fee
             }),
         })
             .then(res => res.json())
@@ -42,7 +33,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
                 // console.log(updatedPark)
                 onUpdatePark(updatedPark)
             })
-            navigate('/parks')
+            navigate("/parks")
       }
 
     return(
