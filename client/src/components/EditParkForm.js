@@ -74,7 +74,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         </label>
         <br/>
         <label>
-        Image
+        Image URL
         <br/>
           <input className='add-form-image' type="text" defaultValue={image} onChange={(e) => setFormData({...formData, image: e.target.value})} />
         </label>

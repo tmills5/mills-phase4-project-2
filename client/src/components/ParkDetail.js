@@ -3,15 +3,15 @@ import {useLocation, Link} from 'react-router-dom';
 
 
 
-function ParkDetail( {user, onUpdatePark} ) {
+function ParkDetail( {user} ) {
   console.log(user)
   // const [editMode, setEditMode] = useState(false);
   // passing individual park info through Link-RouterV6 way
   const location = useLocation();
   const {park} = location.state
 console.log(park)
-  const {id, full_name, state, description, activities, image, url} = park
-
+  const { full_name, state, description, activities, image, url} = park
+console.log(activities)
 
   return(
     <>
@@ -21,7 +21,7 @@ console.log(park)
                 <img src={image} alt=""/>
               </figure>
         </div>
-
+<br/>
         <div className="card-content">
 
           <div className="media-content">
@@ -32,8 +32,8 @@ console.log(park)
 
         <div className="content"> {description}
               <br/>
-          <div>{url}-----fake url</div>
-          <div>Activities: {activities}</div>
+          <a href={url}>{url}</a>
+          <div>Activities: <br/>{activities}</div>
         </div>
         {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""}
       </div>

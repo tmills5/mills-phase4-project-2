@@ -53,15 +53,15 @@ function AddParkForm( {handlePost, errors, navigate}) {
         </label>
         <br/>
         <label>
-        Image
+        Image URL
         <br/>
           <input className='add-form-image' type="text" value={formData.image} onChange={(e) => setFormData({...formData, image: e.target.value})} />
         </label>
         <br/>
         <label>
-        Pass Fee
+        Park URL
         <br/>
-          <input className='add-form-fee' type="text" value={formData.fee} onChange={(e) => setFormData({...formData, fee: e.target.value})} />
+          <input className='add-form-fee' type="text" value={formData.url} onChange={(e) => setFormData({...formData, fee: e.target.value})} />
         </label>
         <br/>
         <input type="submit" value="Submit Park" />
