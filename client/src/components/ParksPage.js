@@ -31,10 +31,10 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                         ></input> */}
 
                 {parks.map(park=> (
-                    <>
-                <ParkCard key={park.id} park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
+                    <div key={park.id}>
+                        <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
                 {/* <Link to={`/parks/${park.id}`}>More</Link> */}
-                    </>
+                    </div>
                 ))}
                     </div>
                 </div>

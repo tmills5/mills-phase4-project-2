@@ -30,7 +30,7 @@ useEffect(()=>{
   return(
     <>
           {/* {parks.filter(park=> park.id === id).map(park=> (<p>{park.full_name}</p>))} */}
-     <div key={id}className="card">
+     <div key={id} className="card">
        <div className="card-image">
              <figure className="image is-128x128">
                <img src={image} alt=""/>
@@ -54,7 +54,7 @@ useEffect(()=>{
          </div>
          {/* <div>Park Pass Fee: ${price}</div> */}
          <br/>
-         {user && user.is_admin ? <button><Link to="/parks/:id/edit" state={{park}}>Edit Park</Link></button> : ""}
+         {user && user.is_admin ? <button><Link to={`/parks/${id}/edit`} state={{park}}>Edit Park</Link></button> : ""}
        </div>
       {/* {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""} */}
      </div>
