@@ -1,15 +1,13 @@
 import React, { useState }from 'react';
 import {useLocation} from "react-router-dom";
 
-
 function EditParkForm( {onUpdatePark, errors, navigate }) {
     const location = useLocation();
     const {park} = location.state
-    console.log(park)
-
+    // console.log(park)
     const { full_name, state, description, activities, image, url } = park
-
     const [formData, setFormData] = useState( {park} )
+    
 
       function handleParkUpdate(e){
         e.preventDefault()
@@ -78,6 +76,7 @@ function EditParkForm( {onUpdatePark, errors, navigate }) {
         <br/>
         <input type="submit" value="Update Park" />
        </form>
+
         </>
     )
 }

@@ -39,8 +39,10 @@ function ParkDetail( {user} ) {
           {activities}
           </div>
           <div>Park Pass Fee: ${price}</div>
+          <br/>
+          {user && user.is_admin ? <button><Link to="/parks/:id/edit" state={{park}}>Edit Park</Link></button> : ""}
         </div>
-        {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""}
+        {/* {user && user.is_admin ? <Link to="/parks/:id/edit" state={{park}}>Edit</Link> : ""} */}
       </div>
       <br/>
     </>
