@@ -2,12 +2,8 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 
-
-
-function ParkCard( { park, user, onDeletePark, onUpdatePark } ) {
-    const { id, full_name, state, description, image} = park
-
-
+function ParkCard( { park, user, onDeletePark } ) {
+    const { id, full_name, state, image} = park
 
     return(
         <div className="box">
@@ -20,11 +16,10 @@ function ParkCard( { park, user, onDeletePark, onUpdatePark } ) {
                 <div className="media-content">
                     <div className="content">
                         <p>
-                            {full_name} / <small>{state}</small>
+                            <strong>{full_name}</strong> / <small>{state}</small>
                     <br/>
-                            {/* {description} */}
                         </p>
-                        <Link to={`/parks/${park.id}`}  state={{park}} >Click for more details..</Link>
+                        <Link to={`/parks/${park.id}`}>Click for more details..</Link>
                     </div>
                     <div>{user.is_admin ? 
                         <>

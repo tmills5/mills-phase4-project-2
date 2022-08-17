@@ -16,12 +16,12 @@ function App() {
   const [parks, setParks] = useState([]);
   const [user, setUser] = useState();
   const [errors, setErrors] = useState([]);
-  // const [cart, setCart] = useState([]);
 
   const navigate = useNavigate();
 
-  // getting all parks
+  
   useEffect(() => {
+    // authenticating user on page load
     fetch('/authorized_user')
     .then((res) => {
       if (res.ok) {
@@ -29,6 +29,7 @@ function App() {
         .then((user) => {
           setUser(user);
 
+      // getting all parks
           fetch('/parks')
           .then(res => res.json())
           .then(setParks);
@@ -79,7 +80,7 @@ function App() {
     })
   }
 
-
+console.log(user)
 
   return (
     <div className="App">
@@ -90,9 +91,9 @@ function App() {
         <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />
         <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} onDeletePark={handleDeletePark} /> } />
         <Route exact path='/parks/:id' element={ <ParkDetail user={user} parks={parks}/>} />
-        <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
+        <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} errors={errors} setErrors={setErrors} />} />
         <Route exact path='/logout' element={ <Logout />} />
-        <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser}/>} />
+        <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser} errors={errors} setErrors={setErrors} />} />
         <Route exact path='/parks/new' element={ <AddParkForm handlePost={handlePost} errors={errors} navigate={navigate}/>} />
         <Route exact path='/parks/:id/edit' element={ <EditParkForm handlePost={handlePost}  onUpdatePark={handleUpdatePark} errors={errors} navigate={navigate}/>} />
 

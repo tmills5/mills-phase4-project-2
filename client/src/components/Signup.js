@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 
-function Signup( {setUser, navigate} ) {
+function Signup( {setUser, navigate, errors, setErrors} ) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [errors, setErrors] = useState([])
 
   function onSubmit(e){
     e.preventDefault()
@@ -29,7 +28,6 @@ function Signup( {setUser, navigate} ) {
       console.log(errors)
       setUsername('');
       setPassword('');
-    
   }
 
   return (

@@ -118,10 +118,14 @@ h2 {
 
 .content {
   padding: 15px;
-  margin: 10px;
+  margin: 20px;
 }
 
 .activities {
+  padding: 15px;
+}
+
+a {
   padding: 10px;
 }
 

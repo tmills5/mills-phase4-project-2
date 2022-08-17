@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-function Navigation( {user, setUser, navigate} ) {
-  // console.log(user)
+function Navigation( { user, setUser } ) {
+  // console.log(user.name)
 
     const logout = () => {
         fetch('/logout', {
@@ -45,8 +45,9 @@ function Navigation( {user, setUser, navigate} ) {
       </div>
       <div className="nav-title">
         ParkIt
+        
       </div>
-
+      <p>Welcome..{user ? user.name : ''}</p>
       <div className="navbar-end">
         <div className="navbar-item">
           <div className="buttons">

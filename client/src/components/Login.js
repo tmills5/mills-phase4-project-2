@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 
 
-function Login( {setUser, navigate} ) {
+function Login( {setUser, navigate, errors, setErrors} ) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [errors, setErrors] = useState([])
 
     const onSubmit = (e) =>{
         e.preventDefault()
@@ -42,7 +41,7 @@ function Login( {setUser, navigate} ) {
     return (
       <div className="container is-fluid">
         <div className="notification is-primary">
-        <p style={{"textAlign": "center"}}>Please Sign up or Log in to Discover...</p>
+        <h1>Log In..</h1>
           <form onSubmit={onSubmit}>
             <label>
               Username

@@ -2,9 +2,11 @@ import React, { useState }from 'react';
 import {useLocation} from "react-router-dom";
 
 function EditParkForm( {onUpdatePark, errors, navigate }) {
+  // receiving the park through location from park detail 
     const location = useLocation();
     const {park} = location.state
     // console.log(park)
+    
     const { full_name, state, description, activities, image, url } = park
     const [formData, setFormData] = useState( {park} )
     

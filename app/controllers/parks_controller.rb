@@ -16,7 +16,7 @@ class ParksController < ApplicationController
     def show
         park = Park.find_by(id: params[:id])
         if park
-        render json: park
+        render json: park, status: :ok
         else
         render json: {error: "Park Not Found"}, status: :not_found
         end
