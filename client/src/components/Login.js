@@ -30,10 +30,10 @@ function Login( {setUser, navigate, errors, setErrors} ) {
             
           } else {
             res.json()
-            .then(json => setErrors(json.error))
+            .then(json => (
+              setErrors(json.error)))
           }
         });
-
         console.log(errors)
     }
 
