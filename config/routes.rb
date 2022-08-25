@@ -7,13 +7,14 @@ Rails.application.routes.draw do
 # users
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
+  
   # authenticate user initially
-  get '/authorized_user', to: 'users#show'
+  get '/authenticated_user', to: 'users#show'
 
 # # parks
   # get '/parks', to: 'parks#index'
-  get '/parks/:id', to: 'parks#show'
-  get '/parks/:id/edit', to: 'parks#update'
+  # get '/parks/:id', to: 'parks#show'
+  # get '/parks/:id/edit', to: 'parks#update'
 
 # #passes
   # get '/passes', to: 'passes#index'

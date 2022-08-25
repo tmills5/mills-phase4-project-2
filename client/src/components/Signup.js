@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 
 
-function Signup( {setUser, navigate, errors, setErrors} ) {
+function Signup( {setUser, navigate} ) {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const [errors, setErrors] = useState([])
+  
 
   function onSubmit(e){
     e.preventDefault()
-    navigate('/parks');
-
+    // navigate('/parks');
       let user = {
           name: username,
           password
@@ -21,13 +22,14 @@ function Signup( {setUser, navigate, errors, setErrors} ) {
       })
       .then(res => res.json())
       .then(userEnteredJson => {
-        console.log(userEnteredJson)
+        // console.log(userEnteredJson)
         setUser(userEnteredJson)
         if(userEnteredJson.errors) setErrors(Object.entries(userEnteredJson.errors))
       })
       console.log(errors)
       setUsername('');
       setPassword('');
+      
   }
 
   return (
@@ -45,6 +47,13 @@ function Signup( {setUser, navigate, errors, setErrors} ) {
           </label>
           <input type="submit" value="Sign up!" />
         </form>
+        {errors.length > 0 && (
+          <ul style={{ color: "red" }}>
+            {errors.map((error) => (
+              <li key={error}>{error[1]}</li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )

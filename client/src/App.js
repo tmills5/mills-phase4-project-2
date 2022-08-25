@@ -22,7 +22,7 @@ function App() {
   
   useEffect(() => {
     // authenticating user on page load
-    fetch('/authorized_user')
+    fetch('/authenticated_user')
     .then((res) => {
       if (res.ok) {
         res.json()
@@ -91,9 +91,9 @@ console.log(user)
         <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />
         <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} onDeletePark={handleDeletePark} /> } />
         <Route exact path='/parks/:id' element={ <ParkDetail user={user} parks={parks}/>} />
-        <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} errors={errors} setErrors={setErrors} />} />
+        <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/logout' element={ <Logout />} />
-        <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser} errors={errors} setErrors={setErrors} />} />
+        <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser} />} />
         <Route exact path='/parks/new' element={ <AddParkForm handlePost={handlePost} errors={errors} navigate={navigate}/>} />
         <Route exact path='/parks/:id/edit' element={ <EditParkForm handlePost={handlePost}  onUpdatePark={handleUpdatePark} errors={errors} navigate={navigate}/>} />
 
