@@ -2,7 +2,7 @@ import React from "react";
 
 
 function Home({user}) {
-console.log(user.passes)
+console.log(user)
 
 
 
@@ -34,8 +34,8 @@ console.log(user.passes)
       {user ? 
         <>
         <h1>{user.name}'s park passes:</h1>
-        <h2>{user.passes.map(pass=> (
-          <p>${pass.price} - {pass.park_id}</p>
+        <h2>{user.parks.map(park=> (
+          <p key={park.id}>{park.full_name}</p>
         ))}</h2>
         </>
         :

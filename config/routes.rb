@@ -15,15 +15,6 @@ Rails.application.routes.draw do
   # authenticate user initially
   get '/authenticated_user', to: 'users#show'
 
-# # parks
-  # get '/parks', to: 'parks#index'
-  # get '/parks/:id', to: 'parks#show'
-  # get '/parks/:id/edit', to: 'parks#update'
-
-# #passes
-  # get '/passes', to: 'passes#index'
-  # get '/passes', to: 'passes#create'
-  
   
 #logging in and logging out
   post "/login", to: "sessions#login"
