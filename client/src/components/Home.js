@@ -1,7 +1,10 @@
 import React from "react";
 
 
-function Home() {
+function Home({user}) {
+console.log(user.passes)
+
+
 
 
   return(
@@ -25,6 +28,27 @@ function Home() {
         <h2>This is a dedicated place for parks, trails, or anyplace outdoors really!! <br/>Now that you have found us, why don't you just "ParkIt" for awhile and we'll help with your next adventure!</h2>
         <h2>Sign up or Log in...</h2>
         <h2>Use the Discover tab at the top to find new parks!</h2>
+      </section>
+
+      <section>
+      {user ? 
+        <>
+        <h1>{user.name}'s park passes:</h1>
+        <h2>{user.passes.map(pass=> (
+          <p>${pass.price} - {pass.park_id}</p>
+        ))}</h2>
+        </>
+        :
+        ''
+      
+      }
+
+
+        {/* <p>{user.passes.map(pass => (
+          <ul>
+            <li>{pass}</li>
+          </ul>
+        ))}</p> */}
       </section>
     </div>
     
