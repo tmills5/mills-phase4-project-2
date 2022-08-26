@@ -26,7 +26,7 @@ function AddParkForm( {handlePost, errors, navigate}) {
       }
 
     return(
-        <>
+        <div>
         {errors?errors.map(e => <div>{e}</div>):null}
        <form onSubmit={onSubmit}>
        <label>
@@ -67,7 +67,7 @@ function AddParkForm( {handlePost, errors, navigate}) {
         <br/>
         <input type="submit" value="Submit Park" />
        </form>
-        </>
+        </div>
     )
 }
 

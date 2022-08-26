@@ -1,13 +1,17 @@
 
 Rails.application.routes.draw do
-  resources :passes
   resources :parks
-  resources :users, only:[:create, :show]
+  # resources :passes
+
+  resources :users, only:[:create, :show] do
+    #nested for passes. user to see own passes
+    resources :passes, only: [:show, :index]
+  end
 
 # users
   get '/users', to: 'users#index'
   get '/signup', to: 'users#create'
-  
+
   # authenticate user initially
   get '/authenticated_user', to: 'users#show'
 

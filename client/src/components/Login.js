@@ -21,38 +21,18 @@ function Login( {setUser, navigate} ) {
         .then(res => res.json())
         .then(user => {
           setUser(user);
-          // navigate('/parks');
+
           console.log(user.error)
-          // not sure how I did this but 
+          // need the values from the object. user.error is an object but i need
+          // it in an array
           if(user.error) setErrors(Object.values(user.error))
         })
 
-        console.log(user.error)
+        // console.log(user.error)
         setUsername('');
         setPassword('');
         setErrors([]);
-
-        // fetch(`/login`,{
-        //   method:'POST',
-        //   headers:{'Content-Type': 'application/json'},
-        //   body:JSON.stringify(user)
-        // })
-        // .then(res => {
-        //   if(res.ok){
-        //     res.json()
-        //     .then(user=>{
-        //       console.log(user)
-        //       setUser(user)
-        //       navigate('/parks')
-        //     })
-        //   } else {
-        //     // if (user.errors) 
-        //     // setErrors((user.errors))
-        //     res.json()
-        //     .then(json => (
-        //        setErrors(json.error)))
-        //   }
-        // });
+          navigate('/');
     }
 
         

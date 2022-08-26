@@ -29,7 +29,7 @@ function Signup( {setUser, navigate} ) {
       console.log(errors)
       setUsername('');
       setPassword('');
-      
+      // if (user) {navigate('/parks')} else {navigate('/signup')};
   }
 
   return (

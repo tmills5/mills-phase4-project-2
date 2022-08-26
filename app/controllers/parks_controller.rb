@@ -4,8 +4,7 @@ class ParksController < ApplicationController
 
     def index
         # byebug
-        parks = Park.all
-        render json: parks
+        parks = render json: Park.all
     end
 
     def create
@@ -14,7 +13,7 @@ class ParksController < ApplicationController
     end
 
     def show
-        park = Park.find_by(id: params[:id])
+        park = find_park
         if park
         render json: park, status: :ok
         else
@@ -23,7 +22,7 @@ class ParksController < ApplicationController
     end
 
     def update
-        park = Park.find_by(id: params[:id])
+        park = find_park
         if park
             park.update(park_params)
             render json: park, status: :accepted
@@ -33,7 +32,7 @@ class ParksController < ApplicationController
     end
 
     def destroy
-        park = Park.find_by!(id: params[:id])
+        park = find_park
         if park
             park.destroy
             head :no_content
@@ -46,6 +45,10 @@ class ParksController < ApplicationController
     
     def park_params
         params.permit(:id, :full_name, :state, :description, :activities, :image, :url)
+    end
+
+    def find_park
+        Park.find(params[:id])
     end
 
     def authorize

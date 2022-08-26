@@ -50,7 +50,7 @@ function App() {
       if(newPark.errors){
         setErrors(newPark.errors)
       } else {
-        setParks([...parks,newPark])
+        setParks([newPark, ...parks])
       }
     })
   }
@@ -80,7 +80,7 @@ function App() {
     })
   }
 
-console.log(user)
+// console.log(user)
 
   return (
     <div className="App">
