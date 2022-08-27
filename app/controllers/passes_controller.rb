@@ -8,7 +8,7 @@ class PassesController < ApplicationController
         else
             passes = Pass.all
         end
-        render json: passes, include: :user
+        render json: passes, include: :parks
     end
 
     def create
@@ -20,7 +20,7 @@ class PassesController < ApplicationController
     def show
         pass = find_pass
         if pass
-        render json: pass
+        render json: pass, include: :parks
         else
         render json: { error: "Pass not found"}, status: :not_found
         end

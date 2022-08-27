@@ -6,7 +6,6 @@ console.log(user)
 
 
 
-
   return(
 
     <div id="home-parent-div">
@@ -33,22 +32,14 @@ console.log(user)
       <section>
       {user ? 
         <>
-        <h1>{user.name}'s park passes:</h1>
-        <h2>{user.parks.map(park=> (
-          <p key={park.id}>{park.full_name}</p>
-        ))}</h2>
+          <h1>{user.name}'s park passes:</h1>
+          {user.parks.map(park=>(<h2 key={park.id}>{park.full_name}</h2>))}
         </>
+
         :
+
         ''
-      
       }
-
-
-        {/* <p>{user.passes.map(pass => (
-          <ul>
-            <li>{pass}</li>
-          </ul>
-        ))}</p> */}
       </section>
     </div>
     
