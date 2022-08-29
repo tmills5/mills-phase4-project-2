@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     def index
         render json: User.all
     end
-  
+
     def create 
          # create! exceptions will be handled by the rescue_from ActiveRecord::RecordInvalid code
         user = User.create!(user_params)
@@ -18,8 +18,13 @@ class UsersController < ApplicationController
         current_user = User.find_by!(id: session[:current_user])
         render json: current_user
     end
+
   
     private
+
+    def test
+        users.order(:name)
+    end
   
     def user_params
         params.permit( :name, :password)

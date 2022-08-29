@@ -22,12 +22,12 @@ function AddParkForm( {handlePost, errors, navigate}) {
           url: formData.url
         }
         handlePost(park)
-        navigate('/parks')
+        // navigate('/parks')
       }
 
     return(
         <div>
-        {errors?errors.map(e => <div>{e}</div>):null}
+        {errors ? errors.map(e => <div>{e}</div>):null}
        <form onSubmit={onSubmit}>
        <label>
           Title

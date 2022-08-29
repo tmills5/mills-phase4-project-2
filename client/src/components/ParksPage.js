@@ -4,11 +4,30 @@ import ParkCard from "./ParkCard";
 
 
 function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
-    console.log(parks)
+    // console.log(parks)
     const [parkNameQuery, setParkNameQuery] = useState("");
+    const [activityQuery, setActivityQuery] = useState('');
 
     const queryParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
         park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
+
+    const activityQueryArray = !activityQuery ? parks : [...parks].filter(park=>
+        park.full_name.toLowerCase().includes(activityQuery.toLocaleLowerCase()))
+
+    const newObj = {
+        activityQuery: activityQuery
+    }
+
+    function onClick() {
+        console.log(newObj)
+        fetch('/activities',{
+            method:'POST',
+            headers: {'Content-Type': 'application/json'},
+            body:JSON.stringify(newObj)
+          })
+          .then(res => res.json())
+          .then(res => {console.log(res)})
+    }
 
 
     return(
@@ -27,6 +46,14 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                         value={parkNameQuery} 
                         onChange={(e)=> setParkNameQuery(e.target.value)}
                         ></input>
+
+                        <input
+                            type="text"
+                            placeholder="Search for activites..." 
+                            value={activityQuery} 
+                            onChange={(e)=> setActivityQuery(e.target.value)}
+                        />
+                        <button onClick={()=>onClick(newObj)}>Submit</button>
 
                     {queryParksArray.map(park=> (
                         <div key={park.id}>

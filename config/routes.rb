@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   resources :parks
   # resources :passes
 
+  post '/activities', to: 'parks#activities'
+
   resources :users, only:[:create, :show] do
     #nested for passes. user to see own passes
     resources :passes, only: [:show, :index]
   end
+get '/passes', to: 'passes#index'
 
 # users
   get '/users', to: 'users#index'

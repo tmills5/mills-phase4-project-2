@@ -7,6 +7,13 @@ class ParksController < ApplicationController
         parks = render json: Park.all
     end
 
+    def activities
+        # byebug
+        parks = Park.all.select { |park| park.activities.include? params[:activityQuery]}
+        render json: parks
+
+    end
+
     def create
         park = Park.create!(park_params)
         render json: park, status: :created
@@ -40,8 +47,10 @@ class ParksController < ApplicationController
             render json: {error: "Park Not Found"}, status: :not_found
         end
     end
+
     
     private
+
     
     def park_params
         params.permit(:id, :full_name, :state, :description, :activities, :image, :url)

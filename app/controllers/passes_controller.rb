@@ -10,6 +10,7 @@ class PassesController < ApplicationController
         end
         render json: passes, include: :parks
     end
+ 
 
     def create
         user = find_user

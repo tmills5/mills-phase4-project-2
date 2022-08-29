@@ -5,7 +5,6 @@ function Home({user}) {
 console.log(user)
 
 
-
   return(
 
     <div id="home-parent-div">
@@ -41,7 +40,9 @@ console.log(user)
         ''
       }
       </section>
+
     </div>
+
     
   )
 }
