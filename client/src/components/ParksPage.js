@@ -50,7 +50,7 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
 {/* 
                         <input
                             type="text"
-                            placeholder="Search for activites..." 
+                            placeholder="Search for activities..." 
                             value={activityQuery} 
                             onChange={(e)=> setActivityQuery(e.target.value)}
                         />

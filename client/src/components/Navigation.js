@@ -34,7 +34,7 @@ function Navigation( { user, setUser } ) {
           </div>
 
           <div className="navbar-item" href='/'>
-            <Link to='/parks'>Discover</Link>
+            <Link to='/parks'>Parks</Link>
           </div>
 
 
