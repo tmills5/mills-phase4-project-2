@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     def show
         # using session to find user in question. sessions are in user browser
         # if session for user currently happening. set our user to that user and render json
-        current_user = User.find_by!(id: session[:current_user])
+        current_user = User.find_by(id: session[:current_user])
         render json: current_user
     end
 

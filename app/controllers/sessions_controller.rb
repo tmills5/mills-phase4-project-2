@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
     def login
       # find user by username
-      user = User.find_by!(name:params[:username])
+      user = User.find_by(name:params[:username])
       # authenticate
       if user&.authenticate(params[:password])
           session[:current_user] = user.id

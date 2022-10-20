@@ -1,6 +1,6 @@
 class ParksController < ApplicationController
     wrap_parameters format: []
-    before_action :authorize
+    # before_action :authorize
 
     def index
         # byebug
@@ -11,7 +11,6 @@ class ParksController < ApplicationController
         # byebug
         parks = Park.all.select { |park| park.activities.include? params[:activityQuery]}
         render json: parks
-
     end
 
     def create

@@ -37,7 +37,7 @@ Park.create(
   state: "TX",
   description: "Life of all types abounds in the Big Thicket. This national preserve protects the incredible diversity of life found where multiple habitats converge in southeast Texas. Hiking trails and waterways meander through nine different ecosystems, from longleaf pine forests to cypress-lined bayous. It is a place of discovery, a place to wander and explore, a place to marvel at the richness of nature.",
   activities: activities.sample(2).join(', '),
-  image: "https://www.nps.gov/common/uploads/structured_data/5CD6D99E-E546-9968-747215A9C8E9D695.jpg",
+  image: "https://www.nps.gov/bith/learn/images/IMG_3421-5.JPG?maxwidth=1200&maxheight=1200&autorotate=false",
   url: "https://www.nps.gov/bith/index.htm"
 )
 

@@ -32,7 +32,7 @@ function Login( {setUser, navigate} ) {
         setUsername('');
         setPassword('');
         setErrors([]);
-          navigate('/');
+          // navigate('/');
     }
 
         
