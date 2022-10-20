@@ -21,10 +21,6 @@ class UsersController < ApplicationController
 
   
     private
-
-    def test
-        users.order(:name)
-    end
   
     def user_params
         params.permit( :name, :password)
