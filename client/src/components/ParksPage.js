@@ -20,7 +20,7 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
     }
 
     function onClick() {
-        console.log(newObj)
+        // console.log(newObj)
         fetch('/activities',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
@@ -49,10 +49,11 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                         ></input>
 
                         <input
-                            type="text"
-                            placeholder="Search for activities..." 
-                            value={activityQuery} 
-                            onChange={(e)=> setActivityQuery(e.target.value)}
+                        className="input is-primary"
+                        type="text"
+                        placeholder="Search for activities..." 
+                        value={activityQuery} 
+                        onChange={(e)=> setActivityQuery(e.target.value)}
                         />
                         <button onClick={()=>onClick(newObj)}>Submit</button>
 
