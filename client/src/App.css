@@ -97,6 +97,7 @@ h2 {
   height: 100px;
   width: 200px;
 }
+
 .park-list-container {
   background-color: black;
 }
@@ -104,6 +105,14 @@ h2 {
 .box {
   padding: 10px;
   margin: 10px;
+}
+
+.search-input {
+  max-width: 500px;
+}
+
+.button {
+  top: 10px;
 }
 
 /* Parks Detail--------------------------------- */

@@ -8,10 +8,9 @@ class ParksController < ApplicationController
     end
 
     def activities
-        
-        parks = Park.all.select { |park| park.activities.include? params[:activityQuery]}
+        parks = Park.all.select { |park| park.activities.downcase.include? params[:activityQuery].downcase}
         render json: parks
-        byebug
+        # byebug
     end
 
     def create
