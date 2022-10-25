@@ -20,7 +20,7 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
     }
 
     function onClick() {
-        // console.log(newObj)
+         console.log(newObj)
         fetch('/activities',{
             method:'POST',
             headers: {'Content-Type': 'application/json'},
@@ -40,44 +40,43 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                     :
                     ""}
                     <div className="park-list-container">
-                        <div className="field">
-                            <label class="label">Search by Park Name..</label>
-                            <input
-                                className="input is-normal"
-                                type="text" 
-                                placeholder="e.g Biscayne National Park"
-                                value={parkNameQuery} 
-                                onChange={(e)=> setParkNameQuery(e.target.value)}
-                            />
+                        <div className="field has add-ons">
+                            <div className="control">
+                                <label className="label">Simply type to look by Park Name..</label>
+                                <input
+                                    className="input is-normal"
+                                    type="text" 
+                                    placeholder="e.g Biscayne National Park"
+                                    value={parkNameQuery} 
+                                    onChange={(e)=> setParkNameQuery(e.target.value)}
+                                />
+                            </div>
+
+                            <div className="control">
+                                <label className="label">Or Search by Favorite Activity..</label>
+                                <input
+                                    className="input is-normal"
+                                    type="text" 
+                                    placeholder="e.g Fishing"
+                                    value={activityQuery} 
+                                    onChange={(e)=> setActivityQuery(e.target.value)}
+                                />
+                                <button className="button" onClick={()=>onClick(newObj)}>Search..</button>
+                            </div>
                         </div>
 
-                        <div className="field">
-                            <label class="label">Or Favorite Activity..</label>
-                            <input
-                                className="control"
-                                type="text" 
-                                placeholder="e.g Fishing"
-                                value={activityQuery} 
-                                onChange={(e)=> setActivityQuery(e.target.value)}
-                            />
-                        </div>
 
-                        {/* <input 
-                        className="input" 
-                        type="text" 
-                        placeholder="Search for parks..." 
-                        value={parkNameQuery} 
-                        onChange={(e)=> setParkNameQuery(e.target.value)}
-                        ></input> */}
 
-                        <input
+
+
+                        {/* <input
                         className="input is-primary"
                         type="text"
                         placeholder="Search for activities..." 
                         value={activityQuery} 
                         onChange={(e)=> setActivityQuery(e.target.value)}
-                        />
-                        <button onClick={()=>onClick(newObj)}>Submit</button>
+                        /> */}
+                         {/* <button onClick={()=>onClick(newObj)}>Submit</button> */}
 
                         {queryParksArray.map(park=> (
                             <div key={park.id}>
