@@ -40,13 +40,35 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                     :
                     ""}
                     <div className="park-list-container">
-                        <input 
-                        className="input is-primary" 
+                        <div className="field">
+                            <label class="label">Search by Park Name..</label>
+                            <input
+                                className="input is-normal"
+                                type="text" 
+                                placeholder="e.g Biscayne National Park"
+                                value={parkNameQuery} 
+                                onChange={(e)=> setParkNameQuery(e.target.value)}
+                            />
+                        </div>
+
+                        <div className="field">
+                            <label class="label">Or Favorite Activity..</label>
+                            <input
+                                className="control"
+                                type="text" 
+                                placeholder="e.g Fishing"
+                                value={activityQuery} 
+                                onChange={(e)=> setActivityQuery(e.target.value)}
+                            />
+                        </div>
+
+                        {/* <input 
+                        className="input" 
                         type="text" 
                         placeholder="Search for parks..." 
                         value={parkNameQuery} 
                         onChange={(e)=> setParkNameQuery(e.target.value)}
-                        ></input>
+                        ></input> */}
 
                         <input
                         className="input is-primary"
@@ -57,10 +79,10 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                         />
                         <button onClick={()=>onClick(newObj)}>Submit</button>
 
-                    {queryParksArray.map(park=> (
-                        <div key={park.id}>
-                            <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
-                        </div>
+                        {queryParksArray.map(park=> (
+                            <div key={park.id}>
+                                <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
+                            </div>
                         ))}
                     </div>
                 </div>
