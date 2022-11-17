@@ -5,8 +5,8 @@ import ParkCard from "./ParkCard";
 
 function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
     // console.log(user)
-    // console.log(parks)
-    const [parkNameQuery, setParkNameQuery] = useState("");
+    console.log(parks)
+    const [parkNameQuery, setParkNameQuery] = useState('');
     const [activityQuery, setActivityQuery] = useState('');
     const [activityQueryList, setActivityQueryList] = useState('')
 
@@ -33,7 +33,6 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
             setActivityQueryList(activityQueryResp)
         })
     }
-
 
     return(
         <>
@@ -84,7 +83,8 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                             <div key={park.id}>
                                 <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
                             </div>
-                        ))} 
+                        ))
+                    } 
                     </div>
                 </div>
 

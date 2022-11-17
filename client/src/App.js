@@ -30,9 +30,14 @@ function App() {
           setUser(user);
 
       // getting all parks
-          fetch('/parks')
-          .then(res => res.json())
-          .then(setParks);
+          //fetch('/parks') //previous version that fetches from seeds.rb
+          const fetchParks = async () => {
+            const data = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=rbvoasKXp0kfgVVusGz7rsxrIzTjCnTCvmGlMHZQ');
+            const json = await data.json();
+            setParks(json)
+          }
+          fetchParks()
+          .catch(console.error)
         });
       }
     });
@@ -81,6 +86,7 @@ function App() {
   }
 
 // console.log(user)
+
 
   return (
     <div className="App">
