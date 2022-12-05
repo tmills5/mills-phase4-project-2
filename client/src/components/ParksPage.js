@@ -10,6 +10,8 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
     const [activityQueryList, setActivityQueryList] = useState('');
     const [parks, setParks] = useState([])
 
+    const npsApiKey = process.env.REACT_APP_NPS_API_KEY
+
     useEffect(() => {
     // getting all parks
     fetchParks();
@@ -18,7 +20,7 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
 
 
     async function fetchParks() {
-        const response = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=rbvoasKXp0kfgVVusGz7rsxrIzTjCnTCvmGlMHZQ');
+        const response = await fetch(`https://developer.nps.gov/api/v1/parks?&api_key=${npsApiKey}`);
         const parksObj = await response.json();
         console.log("Parks Object: ", parksObj);
         const parks = parksObj.data
