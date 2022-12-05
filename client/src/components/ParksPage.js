@@ -22,15 +22,15 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
     async function fetchParks() {
         const response = await fetch(`https://developer.nps.gov/api/v1/parks?&api_key=${npsApiKey}`);
         const parksObj = await response.json();
-        console.log("Parks Object: ", parksObj);
+        // console.log("Parks Object: ", parksObj);
         const parks = parksObj.data
-        console.log(parks)
+        // console.log(parks)
         setParks(parks);
         }
 
 
     const queryParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
-        park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
+        park.fullName.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
 
     // const activityQueryArray = !activityQuery ? parks : [...parks].filter(park=>
     //     park.full_name.toLowerCase().includes(activityQuery.toLocaleLowerCase()))
