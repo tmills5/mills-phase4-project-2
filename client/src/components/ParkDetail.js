@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams} from 'react-router-dom';
 
-
 function ParkDetail({user}) {
     const [park, setPark] = useState({});
     const params = useParams();

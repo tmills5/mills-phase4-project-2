@@ -28,16 +28,7 @@ function App() {
         res.json()
         .then((user) => {
           setUser(user);
-
-      // getting all parks
-          //fetch('/parks') //previous version that fetches from seeds.rb
-          const fetchParks = async () => {
-            const data = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=rbvoasKXp0kfgVVusGz7rsxrIzTjCnTCvmGlMHZQ');
-            const json = await data.json();
-            setParks(json)
-          }
-          fetchParks()
-          .catch(console.error)
+          // .catch(console.error)
         });
       }
     });
@@ -95,8 +86,8 @@ function App() {
       <Routes>
 
         <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />
-        <Route exact path='/parks' element={ <ParksPage parks={parks} user={user} onDeletePark={handleDeletePark} /> } />
-        <Route exact path='/parks/:id' element={ <ParkDetail user={user} parks={parks}/>} />
+        <Route exact path='/parks' element={ <ParksPage user={user} onDeletePark={handleDeletePark} /> } />
+        <Route exact path='/parks/:id' element={ <ParkDetail user={user}/>} />
         <Route exact path='/signup' element={ <Signup setUser={setUser} navigate={navigate} />} />
         <Route exact path='/logout' element={ <Logout />} />
         <Route exact path='/login' element={ <Login  navigate={navigate} setUser={setUser} />} />

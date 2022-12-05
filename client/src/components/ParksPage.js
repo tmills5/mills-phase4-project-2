@@ -1,14 +1,31 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import ParkCard from "./ParkCard";
 
 
-function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
+function ParksPage({ user, onDeletePark, onUpdatePark }) {
     // console.log(user)
-    console.log(parks)
     const [parkNameQuery, setParkNameQuery] = useState('');
     const [activityQuery, setActivityQuery] = useState('');
-    const [activityQueryList, setActivityQueryList] = useState('')
+    const [activityQueryList, setActivityQueryList] = useState('');
+    const [parks, setParks] = useState([])
+
+    useEffect(() => {
+    // getting all parks
+    fetchParks();
+}, [])
+
+
+
+    async function fetchParks() {
+        const response = await fetch('https://developer.nps.gov/api/v1/parks?&api_key=rbvoasKXp0kfgVVusGz7rsxrIzTjCnTCvmGlMHZQ');
+        const parksObj = await response.json();
+        console.log("Parks Object: ", parksObj);
+        const parks = parksObj.data
+        console.log(parks)
+        setParks(parks);
+        }
+
 
     const queryParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
         park.full_name.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
@@ -77,16 +94,16 @@ function ParksPage( {parks, user, onDeletePark, onUpdatePark} ) {
                             : ""}
                         </div>
                     </div>
-
+                    
                     <div className="park-list-container">
                         {queryParksArray.map(park=> (
                             <div key={park.id}>
                                 <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
                             </div>
-                        ))
-                    } 
+                            ))}
                     </div>
-                </div>
+
+                    </div>
 
             :
 
