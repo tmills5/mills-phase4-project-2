@@ -33,7 +33,7 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
         park.fullName.toLowerCase().includes(parkNameQuery.toLocaleLowerCase()))
 
     // const activityQueryArray = !activityQuery ? parks : [...parks].filter(park=>
-    //     park.full_name.toLowerCase().includes(activityQuery.toLocaleLowerCase()))
+    //     park.fullName.toLowerCase().includes(activityQuery.toLocaleLowerCase()))
 
     const newObj = {
         activityQuery: activityQuery
