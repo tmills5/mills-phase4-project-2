@@ -1,11 +1,23 @@
 class ParksController < ApplicationController
     wrap_parameters format: []
     # before_action :authorize
+    require 'rest-client'
+    require_relative "../../app/.nps_api_key.rb"
+
+    def get_parks
+
+        url = "https://developer.nps.gov/api/v1/parks?&api_key=#{$nps_api_key}"
+        response = RestClient.get(url)
+        render json: response
+    end
+
 
     def index
         # byebug
         parks = render json: Park.all
     end
+
+
 
     def activities
         parks = Park.all.select { |park| park.activities.downcase.include? params[:activityQuery].downcase}
