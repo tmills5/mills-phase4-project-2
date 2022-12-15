@@ -17,7 +17,6 @@ function ParkCard( { park, user, onDeletePark } ) {
         <div className="card-body">
           <h5 className="card-title">{fullName} <hr/></h5>
           <h6> {addresses[0].city}, {addresses[0].stateCode}</h6>
-          <p></p>
           <a href=''>
           <button type="button" className="btn btn-primary">More</button>
           </a>

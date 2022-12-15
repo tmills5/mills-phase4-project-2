@@ -10,6 +10,7 @@ import {
   MDBNavbarLink,
   MDBCollapse
 } from 'mdb-react-ui-kit';
+import trees from '../assets/Trees.png';
 // import { Link } from 'react-router-dom';
 
 
@@ -32,7 +33,9 @@ function Navigation( { user, setUser } ) {
     <MDBNavbar expand='lg' light bgColor='light'>
     <MDBContainer fluid>
       <MDBNavbarBrand href='/'>
-        <img src="" alt=""/>
+        {/* add trees logo here */}
+        {/* <img src={trees} alt="logo"/> */}
+        {/* <h4 className="nav-title">ParkIt</h4> */}
       </MDBNavbarBrand>
       <MDBNavbarToggler
         type='button'
@@ -57,7 +60,7 @@ function Navigation( { user, setUser } ) {
             </MDBNavbarLink>
           </MDBNavbarItem>
           {/* <MDBTypography className="text-center"> */}
-            <h4 className="text-center">ParkIt</h4>
+
           {/* </MDBTypography> */}
           <MDBIcon icon="user ms-auto"/>
           <p>Welcome.. {user ? user.name : ''}</p>
