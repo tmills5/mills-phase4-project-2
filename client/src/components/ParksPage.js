@@ -1,4 +1,11 @@
 import React, { useState, useEffect } from "react";
+
+import { 
+    MDBContainer,
+    MDBCol,
+    MDBRow
+} from "mdb-react-ui-kit";
+
 import { Link } from 'react-router-dom';
 import ParkCard from "./ParkCard";
 
@@ -97,13 +104,15 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
                         </div>
                     </div>
                     
-                    <div className="park-list-container">
+                    <MDBContainer>
+                        <MDBRow>
                         {queryParksArray.map(park=> (
-                            <div key={park.id}>
+                            <MDBCol className="col-xl-3 col-md-12 mb-4" key={park.id}>
                                 <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
-                            </div>
+                            </MDBCol>
                             ))}
-                    </div>
+                        </MDBRow>
+                    </MDBContainer>
 
                     </div>
 
