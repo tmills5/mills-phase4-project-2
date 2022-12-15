@@ -10,23 +10,23 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
     const [activityQueryList, setActivityQueryList] = useState('');
     const [parks, setParks] = useState([])
 
-    const npsApiKey = process.env.REACT_APP_NPS_API_KEY
+    // const npsApiKey = process.env.REACT_APP_NPS_API_KEY
 
-//     useEffect(() => {
-//     // getting all parks
-//     fetchParks();
-// }, [])
+    useEffect(() => {
+    // getting all parks
+    fetchParks();
+}, [])
 
 
 
-//     async function fetchParks() {
-//         const response = await fetch(`https://developer.nps.gov/api/v1/parks?&api_key=${npsApiKey}`);
-//         const parksObj = await response.json();
-//         // console.log("Parks Object: ", parksObj);
-//         const parks = parksObj.data
-//         // console.log(parks)
-//         setParks(parks);
-//         }
+    async function fetchParks() {
+        const response = await fetch("/parks");
+        const parksObj = await response.json();
+        // console.log("Parks Object: ", parksObj);
+        const parks = parksObj.data
+        // console.log(parks)
+        setParks(parks);
+        }
 
 
     const queryParksArray = !parkNameQuery ? parks : [...parks].filter(park=>
