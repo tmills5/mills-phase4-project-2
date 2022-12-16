@@ -1,7 +1,7 @@
 
 Rails.application.routes.draw do
   get '/parks', to: 'parks#get_parks'
-  # get '/parks/:id', to: 'parks#show'
+  get '/parks/id', to: 'parks#show'
   resources :parks
 
 

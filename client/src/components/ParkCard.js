@@ -5,7 +5,7 @@ import { MDBCard } from 'mdb-react-ui-kit'
 
 function ParkCard( { park, user, onDeletePark } ) {
     const { id, fullName, images, addresses } = park;
-console.log(id)
+// console.log(id)
     return(
         <MDBCard className="card text-center">
 
@@ -17,7 +17,7 @@ console.log(id)
         <div className="card-body">
           <h5 className="card-title">{fullName} <hr/></h5>
           <h6> {addresses[0].city}, {addresses[0].stateCode}</h6>
-          <a href="">
+          <a href={`/parks/${id}`}>
           <button type="button" className="btn btn-primary">More</button>
           </a>
         </div>

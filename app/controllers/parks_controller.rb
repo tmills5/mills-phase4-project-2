@@ -5,7 +5,7 @@ class ParksController < ApplicationController
     require_relative "../../app/.nps_api_key.rb"
 
     def get_parks
-        url = "https://developer.nps.gov/api/v1/parks?&api_key=#{$nps_api_key}"
+        url = "https://developer.nps.gov/api/v1/parks?limit=5&api_key=#{$nps_api_key}"
         response = RestClient.get(url)
         render json: response
     end
@@ -29,8 +29,8 @@ class ParksController < ApplicationController
     end
 
     def show
-
-        park = find_park
+byebug
+        # park = find_park
         if park
         render json: park, status: :ok
         else

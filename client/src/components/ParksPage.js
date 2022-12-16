@@ -63,12 +63,12 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
 
     return(
         <>
-            {user ?
+            
                 <div>
-                    {user.is_admin ? 
+                    {/* {user.is_admin ? 
                     <div className="button is-rounded"><Link to='/parks/new'>Add Park</Link></div>
                     :
-                    ""}
+                    ""} */}
                     <div className="field has add-ons">
                         <div className="control">
                             <label className="label">Simply type to look by Park Name..</label>
@@ -114,13 +114,7 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
                             ))}
                         </MDBRow>
                     </MDBContainer>
-
                     </div>
-
-            :
-
-            <div>Please Sign up or Log in to Discover...</div>
-            }
         </>
     );
 };
