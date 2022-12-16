@@ -10,12 +10,12 @@ console.log(user)
     <div id="home-parent-div">
 
       <section className="hero">
-        <img src="https://images.pexels.com/photos/8909842/pexels-photo-8909842.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
-        <img src="https://images.pexels.com/photos/8909837/pexels-photo-8909837.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
-        <img src="https://images.pexels.com/photos/11702767/pexels-photo-11702767.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
-        <img src="https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
-        <img src="https://images.pexels.com/photos/6272357/pexels-photo-6272357.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
-        <img src="https://images.pexels.com/photos/5480815/pexels-photo-5480815.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/8909842/pexels-photo-8909842.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/8909837/pexels-photo-8909837.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/11702767/pexels-photo-11702767.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/1032650/pexels-photo-1032650.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/6272357/pexels-photo-6272357.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
+        <img className="hero-img" src="https://images.pexels.com/photos/5480815/pexels-photo-5480815.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""/>
       </section>
 
 
