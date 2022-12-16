@@ -78,7 +78,7 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
                                 placeholder="e.g Biscayne National Park"
                                 value={parkNameQuery} 
                                 onChange={(e)=> setParkNameQuery(e.target.value)}
-                            />
+                             />
                         </div>
                         <div className="control">
                             <label className="label">Or Search by Favorite Activity..</label>

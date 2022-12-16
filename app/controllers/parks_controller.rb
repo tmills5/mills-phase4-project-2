@@ -29,10 +29,12 @@ class ParksController < ApplicationController
     end
 
     def show
-byebug
+        id = params[:id]
+        url_id = "https://developer.nps.gov/api/v1/parks?id=#{id}&api_key=#{$nps_api_key}"
+        response = RestClient.get(url_id)
         # park = find_park
-        if park
-        render json: park, status: :ok
+        if response
+        render json: response, status: :ok
         else
         render json: {error: "Park Not Found"}, status: :not_found
         end

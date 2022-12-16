@@ -5,7 +5,7 @@ function ParkDetail({user}) {
     const [park, setPark] = useState({});
     const params = useParams();
     const { id, full_name, state, description, activities, image, url} = park
-console.log(park)
+    console.log(park)
 
 // grabbing the id with params on page load
     useEffect(()=>{
