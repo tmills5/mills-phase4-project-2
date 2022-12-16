@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import LoadingSpinner from "./LoadingSpinner";
 import { 
     MDBContainer,
     MDBCol,
     MDBRow
 } from "mdb-react-ui-kit";
-
 import { Link } from 'react-router-dom';
 import ParkCard from "./ParkCard";
 
@@ -15,9 +14,8 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
     const [parkNameQuery, setParkNameQuery] = useState('');
     const [activityQuery, setActivityQuery] = useState('');
     const [activityQueryList, setActivityQueryList] = useState('');
-    const [parks, setParks] = useState([])
-
-    // const npsApiKey = process.env.REACT_APP_NPS_API_KEY
+    const [parks, setParks] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
     // getting all parks
@@ -27,12 +25,15 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
 
 
     async function fetchParks() {
+        setIsLoading(true);
         const response = await fetch("/parks");
         const parksObj = await response.json();
+
         // console.log("Parks Object: ", parksObj);
         const parks = parksObj.data
         // console.log(parks)
         setParks(parks);
+        setIsLoading(false);
         }
 
 
@@ -106,7 +107,7 @@ function ParksPage({ user, onDeletePark, onUpdatePark }) {
                     
                     <MDBContainer>
                         <MDBRow>
-                        {queryParksArray.map(park=> (
+                        {isLoading ? <LoadingSpinner /> : queryParksArray.map(park=> (
                             <MDBCol className="col-xl-3 col-md-12 mb-4" key={park.id}>
                                 <ParkCard park={park} user={user} onDeletePark={onDeletePark} onUpdatePark={onUpdatePark}/>
                             </MDBCol>
