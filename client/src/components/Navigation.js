@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import {
-  MDBContainer,
-  MDBNavbar,
-  MDBNavbarBrand,
-  MDBNavbarToggler,
-  MDBNavbarNav,
-  MDBIcon,
-  MDBNavbarItem,
-  MDBNavbarLink,
-  MDBCollapse
-} from 'mdb-react-ui-kit';
+// import {
+//   MDBContainer,
+//   MDBNavbar,
+//   MDBNavbarBrand,
+//   MDBNavbarToggler,
+//   MDBNavbarNav,
+//   MDBIcon,
+//   MDBNavbarItem,
+//   MDBNavbarLink,
+//   MDBCollapse
+// } from 'mdb-react-ui-kit';
 import trees from '../assets/Trees.png';
 // import { Link } from 'react-router-dom';
 
@@ -30,44 +30,63 @@ function Navigation( { user, setUser } ) {
 
 
   return (
-    <MDBNavbar expand='lg' light bgColor='light'>
-    <MDBContainer fluid>
-      <MDBNavbarBrand href='/'>
-        {/* add trees logo here */}
-        {/* <img src={trees} alt="logo"/> */}
-        {/* <h4 className="nav-title">ParkIt</h4> */}
-      </MDBNavbarBrand>
-      <MDBNavbarToggler
-        type='button'
-        aria-expanded='false'
-        aria-label='Toggle navigation'
-        onClick={() => setShowNav(!showNav)}
-      >
-        <MDBIcon icon='bars' fas />
-      </MDBNavbarToggler>
-      <MDBCollapse navbar show={showNav}>
-        <MDBNavbarNav>
+    <nav>
+    <ul>
+      <li><a href='/'><img src={trees} alt='logo' className='logo' /></a></li>
+      <li><a href='/projects'>Projects</a></li>
+      <li><a href='/about'>About</a></li>
+      <li><a href='/contact'>Contact</a></li>
+      <li>
+        <a href='https://www.linkedin.com/in/tmillsdev' target="blank">
+          <i className="fa-brands fa-linkedin fa-lg"></i>
+        </a>
+      </li>
+      <li>
+        <a href='https://github.com/tmills5'>
+          <i className="fa-brands fa-square-github fa-lg" target="blank"></i>
+        </a>
+      </li>
+      <li><a href="/" className='button'>Resume</a></li>
+    </ul>
+  </nav>
+    // <MDBNavbar expand='lg' light bgColor='light'>
+    // <MDBContainer fluid>
+    //   <MDBNavbarBrand href='/'>
+        // {/* add trees logo here */}
+        // {/* <img src={trees} alt="logo"/> */}
+        // {/* <h4 className="nav-title">ParkIt</h4> */}
+      // </MDBNavbarBrand>
+      // <MDBNavbarToggler
+      //   type='button'
+      //   aria-expanded='false'
+      //   aria-label='Toggle navigation'
+      //   onClick={() => setShowNav(!showNav)}
+      // >
+      //   <MDBIcon icon='bars' fas />
+      // </MDBNavbarToggler>
+      // <MDBCollapse navbar show={showNav}>
+      //   <MDBNavbarNav>
 
-          <MDBNavbarItem>
-            <MDBNavbarLink href='/parks'>Parks</MDBNavbarLink>
-          </MDBNavbarItem>
-          {/* <MDBNavbarItem>
-            <MDBNavbarLink href='/logout'>Log out</MDBNavbarLink>
-          </MDBNavbarItem> */}
-          <MDBNavbarItem>
-            <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
-              Logout
-            </MDBNavbarLink>
-          </MDBNavbarItem>
-          {/* <MDBTypography className="text-center"> */}
+      //     <MDBNavbarItem>
+      //       <MDBNavbarLink href='/parks'>Parks</MDBNavbarLink>
+      //     </MDBNavbarItem>
+          // {/* <MDBNavbarItem>
+          //   <MDBNavbarLink href='/logout'>Log out</MDBNavbarLink>
+          // </MDBNavbarItem> */}
+          // <MDBNavbarItem>
+          //   <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
+          //     Logout
+          //   </MDBNavbarLink>
+          // </MDBNavbarItem>
+          // {/* <MDBTypography className="text-center"> */}
 
-          {/* </MDBTypography> */}
-          <MDBIcon icon="user ms-auto"/>
-          <p>Welcome.. {user ? user.name : ''}</p>
-        </MDBNavbarNav>
-      </MDBCollapse>
-    </MDBContainer>
-  </MDBNavbar>
+          // {/* </MDBTypography> */}
+  //         <MDBIcon icon="user ms-auto"/>
+  //         <p>Welcome.. {user ? user.name : ''}</p>
+  //       </MDBNavbarNav>
+  //     </MDBCollapse>
+  //   </MDBContainer>
+  // </MDBNavbar>
     // <nav className="navbar" role="navigation" aria-label="main navigation">
     //   <div className="navbar-brand">
     //     <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" href='/'>
