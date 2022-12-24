@@ -15,7 +15,7 @@ import trees from '../assets/Trees.png';
 
 
 function Navigation( { user, setUser } ) {
-  const [showNav, setShowNav] = useState(false);
+  // const [showNav, setShowNav] = useState(false);
   // console.log(user.name)
 
     const logout = () => {
@@ -31,23 +31,17 @@ function Navigation( { user, setUser } ) {
 
   return (
     <nav>
-    <ul>
-      <li><a href='/'><img src={trees} alt='logo' className='logo' /></a></li>
-      <li><a href='/projects'>Projects</a></li>
-      <li><a href='/about'>About</a></li>
-      <li><a href='/contact'>Contact</a></li>
-      <li>
-        <a href='https://www.linkedin.com/in/tmillsdev' target="blank">
-          <i className="fa-brands fa-linkedin fa-lg"></i>
-        </a>
-      </li>
-      <li>
-        <a href='https://github.com/tmills5'>
-          <i className="fa-brands fa-square-github fa-lg" target="blank"></i>
-        </a>
-      </li>
-      <li><a href="/" className='button'>Resume</a></li>
-    </ul>
+      <ul>
+        <li><a href='/'><img src={trees} alt='logo' className='logo' /></a></li>
+        <li><a href='/parks'>Explore</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href='/logout' onClick={logout}>Logout</a></li>
+        <li>
+          <a href='https://github.com/tmills5'>
+            <i className="fa-brands fa-square-github fa-lg" target="blank"></i>
+          </a>
+        </li>
+      </ul>
   </nav>
     // <MDBNavbar expand='lg' light bgColor='light'>
     // <MDBContainer fluid>

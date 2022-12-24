@@ -1,19 +1,46 @@
-
-.App, body, html {
-  height: 100vh;
-  width: 100%;
-  padding: 5px;
-  background-color: black;
+/* * VARIABLES * */
+/* can assign variables to use later on.
+  colors for the pages and font stacks, etc
+*/
+:root{
+  --primary: #2A312A;
+  --secondary: #28382b;
+  --third: #455B46;
+  --white: white;
+  --black: black;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
 }
 
-/* Landing Page-------------------------------- */
+/* border box model css-tricks.com/box-sizing/ 
+  html has a higher specificity than *
+*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+/* * RESET BROWSER CSS and BASE STYLES * */
+/* this resets the inherited styles from the browser */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary);
+  font-family: var(--sans);
+  color: var(--white)
+}
 
 
 /* --------------Nav----------------------- */
 
 nav {
   font-family: var(--mono);
-  font-size: 80%;
+  font-size: 90%;
   list-style-type: none;
   padding: 1rem;
 }
@@ -29,9 +56,9 @@ nav ul {
   gap: 2rem;
 }
 
-nav li:first-child {
-  flex-basis: 100%;
-  text-align: center;
+nav ul li:first-child {
+  /* flex-basis: 100%; */
+  /* text-align: center; */
 }
 
 a {
@@ -42,24 +69,26 @@ a {
 
 
 a:hover {
-  color: var(--secondaryOG);
+  color: var(--third);
   text-decoration: underline;
 }
 
 .logo {
-  height: 60px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
 }
 
-.button {
+/* .button {
   background-color: var(--primaryOG);
   padding: 0.5rem;
   border-radius: 5px;
-}
+} */
 
-.button:hover {
+/* .button:hover {
   color: var(--white);
   background-color: var(--thirdOG);
-}
+} */
 
 /* * Responsive * */
 @media (min-width: 850px) {
@@ -90,14 +119,12 @@ hr {
 /* -----------------landing content---------------------- */
 
 #home-parent-div {
-    background-color: black;
     padding: 10px;
-    /* justify-content: center; */
 }
 
 .hero {
-  background-color: black;
-  height: 600px;
+
+  height: 500px;
   margin: auto;
 }
 
@@ -129,12 +156,12 @@ hr {
   opacity:0.3;
 }
 .hero img:hover {
-  transform:perspective(800px)       rotateY(0deg);
+  transform:perspective(800px) rotateY(0deg);
   opacity:1;
 }
 
 .home-bottom-container {
-  background-color: black;
+
   height: 200px;
   text-align: center;
 }
