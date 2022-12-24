@@ -21,7 +21,7 @@ console.log(user)
 
       <hr/>
 
-      <section className="home-bottom-container">
+      {/* <section className="home-bottom-container">
         <h2><strong className="home-bottom-title">Who we are...</strong></h2>
         <h2>This is a dedicated place for parks, trails, or anyplace outdoors really!! <br/>Now that you have found us, why don't you just "ParkIt" for awhile and we'll help with your next adventure!</h2>
         <h2>Sign up or Log in...</h2>
@@ -39,7 +39,7 @@ console.log(user)
 
         ''
       }
-      </section>
+      </section> */}
 
     </div>
 

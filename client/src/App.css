@@ -40,9 +40,10 @@ body {
 
 nav {
   font-family: var(--mono);
-  font-size: 90%;
+  /* font-size: 80%; */
   list-style-type: none;
   padding: 1rem;
+  /* width: 100%; */
 }
 
 nav ul {

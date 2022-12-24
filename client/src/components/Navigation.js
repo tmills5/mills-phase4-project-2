@@ -32,15 +32,14 @@ function Navigation( { user, setUser } ) {
   return (
     <nav>
       <ul>
-        <li><a href='/'><img src={trees} alt='logo' className='logo' /></a></li>
+        <li>
+          <a href='/'>
+            <img src={trees} alt='logo' className='logo' />
+          </a>
+        </li>
         <li><a href='/parks'>Explore</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href='/logout' onClick={logout}>Logout</a></li>
-        <li>
-          <a href='https://github.com/tmills5'>
-            <i className="fa-brands fa-square-github fa-lg" target="blank"></i>
-          </a>
-        </li>
       </ul>
   </nav>
     // <MDBNavbar expand='lg' light bgColor='light'>
