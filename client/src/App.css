@@ -52,17 +52,17 @@ nav ul {
   margin: 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 }
 
-nav ul li:nth-child(2) {
-  border: solid;
-  /* flex-basis: 100%; */
-  text-align: left;
-
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
 }
+
+
 
 a {
   color: var(--white);
