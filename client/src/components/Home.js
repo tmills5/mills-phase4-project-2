@@ -19,7 +19,7 @@ console.log(user)
       </section>
 
 
-      <hr/>
+      {/* <hr/> */}
 
       {/* <section className="home-bottom-container">
         <h2><strong className="home-bottom-title">Who we are...</strong></h2>

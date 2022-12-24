@@ -40,9 +40,9 @@ body {
 
 nav {
   font-family: var(--mono);
-  /* font-size: 80%; */
   list-style-type: none;
   padding: 1rem;
+  margin: 0;
   /* width: 100%; */
 }
 
@@ -52,14 +52,16 @@ nav ul {
   margin: 0;
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 2rem;
 }
 
-nav ul li:first-child {
+nav ul li:nth-child(2) {
+  border: solid;
   /* flex-basis: 100%; */
-  /* text-align: center; */
+  text-align: left;
+
 }
 
 a {
@@ -74,11 +76,6 @@ a:hover {
   text-decoration: underline;
 }
 
-.logo {
-  height: 50px;
-  margin: 0;
-  padding: 0;
-}
 
 /* .button {
   background-color: var(--primaryOG);
@@ -94,7 +91,7 @@ a:hover {
 /* * Responsive * */
 @media (min-width: 850px) {
   nav {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
   }
 

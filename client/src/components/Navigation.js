@@ -10,7 +10,7 @@ import React, { useState } from 'react';
 //   MDBNavbarLink,
 //   MDBCollapse
 // } from 'mdb-react-ui-kit';
-import trees from '../assets/Trees.png';
+import treesLogo from '../assets/treesLogo.png';
 // import { Link } from 'react-router-dom';
 
 
@@ -34,13 +34,14 @@ function Navigation( { user, setUser } ) {
       <ul>
         <li>
           <a href='/'>
-            <img src={trees} alt='logo' className='logo' />
+            <img src={treesLogo} alt='logo' height="100px" />
           </a>
         </li>
         <li><a href='/parks'>Explore</a></li>
         <li><a href="/login">Login</a></li>
         <li><a href='/logout' onClick={logout}>Logout</a></li>
       </ul>
+      <hr/>
   </nav>
     // <MDBNavbar expand='lg' light bgColor='light'>
     // <MDBContainer fluid>
