@@ -82,7 +82,7 @@ function App() {
   return (
     <div className="App">
       <Navigation user={user} setUser={setUser}  navigate={navigate} />
-      {/* <hr/> */}
+
       <Routes>
 
         <Route exact path='/' element={ <Home  user={user} setUser={setUser} />} />

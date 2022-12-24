@@ -41,7 +41,6 @@ function Navigation( { user, setUser } ) {
         <li><a href="/login">Login</a></li>
         <li><a href='/logout' onClick={logout}>Logout</a></li>
       </ul>
-      <hr/>
   </nav>
     // <MDBNavbar expand='lg' light bgColor='light'>
     // <MDBContainer fluid>

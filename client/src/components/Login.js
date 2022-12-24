@@ -52,6 +52,7 @@ function Login( {setUser, navigate} ) {
             </label>
             <input type="submit" value="Login" />
           </form>
+          <a href="/signup">Signup!</a>
 
           {<p style={{ color: "red" }}>
             {errors}

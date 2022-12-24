@@ -35,15 +35,13 @@ body {
   color: var(--white)
 }
 
-
 /* --------------Nav----------------------- */
 
 nav {
   font-family: var(--mono);
   list-style-type: none;
-  padding: 1rem;
+  padding: 0;
   margin: 0;
-  /* width: 100%; */
 }
 
 nav ul {
@@ -62,8 +60,6 @@ nav li:first-child {
   text-align: center;
 }
 
-
-
 a {
   color: var(--white);
   text-decoration: none;
@@ -75,7 +71,6 @@ a:hover {
   color: var(--third);
   text-decoration: underline;
 }
-
 
 /* .button {
   background-color: var(--primaryOG);
@@ -90,8 +85,8 @@ a:hover {
 
 /* * Responsive * */
 @media (min-width: 850px) {
-  nav {
-    max-width: 1500px;
+  nav, section {
+    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -101,24 +96,12 @@ a:hover {
     margin-right: auto;
   }
 }
-/* .navbar {
-  background-color: black;
-}
 
-.nav-title {
-  font-size: 30px;
-  color: black;
-  font-family: monospace;
-}
-
-hr {
-  margin: 1%;
-} */
 /* -----------------landing content---------------------- */
 
-#home-parent-div {
-    padding: 10px;
-}
+/* #home-parent-div {
+    padding: 5px;
+} */
 
 .hero {
 
@@ -159,19 +142,20 @@ hr {
 }
 
 .home-bottom-container {
-
   height: 200px;
   text-align: center;
 }
 
 .home-bottom-title {
   color: white;
-  font-size: 20px;
+  font-size: 80%;
   font-family: monospace;
 }
 
-h2 {
+.home-bottom-subtext {
   color: white;
+  font-size: 80%;
+  font-family: monospace;
 }
 
 /* Parks Page ---------------------------------- */
