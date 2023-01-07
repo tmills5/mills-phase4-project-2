@@ -38,7 +38,7 @@ function Navigation( { user, setUser } ) {
           </a>
         </li>
         <li><a href='/parks'>Explore</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href='/login'>Login</a></li>
         <li><a href='/logout' onClick={logout}>Logout</a></li>
       </ul>
   </nav>
